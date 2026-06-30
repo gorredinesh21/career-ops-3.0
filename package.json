@@ -42,7 +42,7 @@
   "license": "MIT",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
-    "@huggingface/inference": "^3.0.0",
+    "@huggingface/inference": "^4.13.21",
     "@langchain/community": "^0.3.0",
     "@langchain/core": "^1.2.1",
     "@langchain/google-genai": "^2.2.0",
