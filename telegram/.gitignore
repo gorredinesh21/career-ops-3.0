@@ -1,0 +1,5 @@
+# Secrets & session — NEVER commit these. The .session file == full account access.
+.env
+*.session
+*.session-journal
+.code_hash.tmp

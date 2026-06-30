@@ -1,0 +1,161 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[left=0.25in,right=0.25in,top=0.35in,bottom=0.35in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontawesome5}
+\usepackage{tabularx}
+\usepackage[default]{lato}
+\usepackage{xcolor}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0pt}
+\setlength{\parindent}{0pt}
+\raggedright
+\titleformat{\section}{\large\scshape}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{5pt}
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}{\Large\textbf{#1}} & #2 \\ \textit{#3} & \textit{#4}\end{tabular*}\vspace{2pt}}
+\newcommand{\resumeProject}[3]{\vspace{6pt}\underline{\textbf{\normalsize #1}} \textbar\ \small #2 \textbar\ \href{#3}{\underline{GitHub}}\vspace{1pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in,itemsep=1pt,topsep=1pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{1pt}}
+
+\begin{document}
+\begin{center}
+
+{\Huge\textbf{GORRE DINESH CHANDAN REDDY}}
+
+\vspace{6pt}
+
+\small
+\faPhone\ 7416767453
+\quad | \quad
+\faEnvelope\ \href{mailto:gorredinesh21@gmail.com}{gorredinesh21@gmail.com}
+\quad | \quad
+\faGithub\ \href{https://github.com/gorredinesh21}{GitHub}
+\quad | \quad
+\faGlobe\ \href{https://portfolio-eight-coral-tabh47k4e7.vercel.app/}{Portfolio}
+
+\end{center}
+
+\vspace{-3pt}
+
+\section{Education}
+
+\resumeSubheading
+{Indian Institute of Technology (ISM), Dhanbad}
+{Dec 2021 -- May 2025}
+{Bachelor of Technology in Computer Science and Engineering}
+{Dhanbad, India}
+\resumeItemListStart
+\resumeItem{
+\textbf{Relevant Coursework:} DSA, OOP, DBMS, Software Engineering, Computer Networks, Deep Learning
+}
+\resumeItemListEnd
+
+\section{Experience}
+
+\resumeSubheading
+{Reliance Industries Ltd.}
+{Aug 2025 -- Present}
+{Graduate Engineer Trainee (Data / AI Engineer)}
+{Mumbai, India}
+\resumeItemListStart
+\resumeItem{
+\textbf{Talk-to-Genie Platform} --- Built an external web application integrating Databricks Genie using OAuth-based authentication, enabling secure access outside Databricks with conversational interaction support.
+}
+\resumeItem{
+\textbf{Unified Genie Architecture} --- Designed a scalable RAG framework overcoming Databricks Genie's \textbf{30-table limitation} by organizing \textbf{120+ tables} across \textbf{9 Genie spaces}.
+}
+\resumeItem{
+\textbf{Intelligent Query Routing Engine} --- Built semantic retrieval pipelines using table and column metadata to dynamically route prompts to relevant Genie spaces.
+}
+\resumeItem{
+\textbf{Near Real-Time Data Pipeline} --- Built ADF ingestion pipelines supporting \textbf{15-minute refresh cycles} with Landing $\rightarrow$ Bronze $\rightarrow$ Silver transformations.
+}
+\resumeItemListEnd
+
+\section{Projects}
+
+\vspace{-4pt}
+
+\resumeProject
+{CareerOS}
+{Python, Flask, SQLite, LangChain, LangGraph}
+{https://github.com/gorredinesh21/JOB_APPLICATION_HANDLER-}
+\resumeItemListStart
+\resumeItem{
+\textbf{AI Job Discovery Engine} --- Built an end-to-end platform extracting job postings from LinkedIn, Indeed and Telegram and generating tailored resumes based on job requirements.
+}
+\resumeItem{
+\textbf{Multi-Agent LLM Workflow} --- The platform extracts job postings, gives a probability of the candidate getting the job, and creates customised resumes for each job posting based on the job description.
+}
+\resumeItem{
+\textbf{Resume Automation Dashboard} --- Developed an interactive dashboard with analytics, workflow execution and downloadable resume generation.
+}
+\resumeItemListEnd
+
+\resumeProject
+{GAN-Based Data Augmentation for Imbalanced Datasets}
+{Python, PyTorch, GANs, XGBoost, LightGBM}
+{https://github.com/gorredinesh21/FINAL_YEAR_PROJECT/tree/main}
+\resumeItemListStart
+\resumeItem{
+\textbf{Synthetic Data Generation Pipeline} --- Built an end-to-end augmentation framework using Custom GAN and SMOTE to address class imbalance in tabular datasets. Used Credit cards dataset as a usecase (10000000+ Data points).
+}
+\resumeItem{
+\textbf{Custom GAN Architecture} --- Designed Generator ($128 \rightarrow 256 \rightarrow 512$, Tanh) and Discriminator ($512 \rightarrow 256 \rightarrow 128 \rightarrow 1$) networks with Xavier initialization, LeakyReLU activations and BatchNorm for stable tabular GAN training.
+}
+\resumeItem{
+\textbf{Multi-Model Training Framework} --- Implemented ML models (Random Forest, XGBoost, LightGBM and Gradient Boosting) on real data and real+augmented data using 5-fold cross-validation.
+}
+\resumeItem{
+\textbf{Performance Improvement} --- Brought down False Negatives to just 9 in a dataset containing 10000000+ data points, Recall value increased from 0.91 to 0.99.
+}
+\resumeItemListEnd
+
+\resumeProject
+{Tinder AI Coach}
+{Python, FastAPI, LangChain, Google Gemini, Hugging Face, Ollama}
+{https://github.com/gorredinesh21/TINDER_MCP_AI}
+\resumeItemListStart
+\resumeItem{
+\textbf{Web-Based Profile Automation} --- Built a FastAPI dashboard where users manage and update their entire Tinder profile (bio, prompts and photos) from one place; the system standardizes and optimizes the inputs and writes them back to the live account, so users never open the Tinder app directly.
+}
+\resumeItem{
+\textbf{Multimodal Photo Analysis} --- Integrated Google Gemini (gemini-2.5-flash) to analyze profile photos and return actionable feedback on composition, presentation, lighting, background and photo selection.
+}
+\resumeItem{
+\textbf{India Dating Knowledge Base} --- Web-scraped and curated data on the Indian dating landscape (profile norms, preferences and photo best-practices) into a knowledge base that grounds the coach's profile and messaging advice in the local context.
+}
+\resumeItemListEnd
+
+\section{Technical Skills}
+
+\small
+\textbf{Data Engineering:}
+Python, SQL, PySpark, Apache Spark, Databricks, Azure Data Factory, ADLS Gen2, ETL/ELT, Data Warehousing, Business Intelligence, AWS
+
+\vspace{2pt}
+
+\textbf{Programming Languages / Databases:}
+Python, SQL, PostgreSQL, C++, C
+
+\vspace{2pt}
+
+\textbf{ML and DL:}
+Machine Learning, Deep Learning, GANs, Data Augmentation, NLP, Computer Vision, OCR, TensorFlow, PyTorch, Keras, MLOps
+
+\vspace{2pt}
+
+\textbf{Gen AI:}
+LangChain, LangGraph, Agentic AI, MCP, RAG, FAISS, ChromaDB, Hugging Face, Ollama, FastAPI
+
+\section{Achievements}
+
+\begin{itemize}[leftmargin=0.18in,itemsep=2pt]
+\item Secured AIR \textbf{2903} in JEE Advanced and AIR \textbf{4616} in JEE Mains
+\item Ranked among \textbf{Top 200 teams out of 18,500+ teams} in Amazon ML Challenge
+\item Participated in Hackfest'23 organized at IIT Dhanbad
+\end{itemize}
+
+\end{document}

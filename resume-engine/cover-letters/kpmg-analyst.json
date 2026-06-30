@@ -1,0 +1,11 @@
+{
+  "_job": "KPMG — Analyst (KYC/AML due diligence), Bangalore; freshers; Bachelor's. Non-technical compliance role — lean on data accuracy, analytical rigor, quality/productivity discipline, fast learning. Do NOT overclaim KYC/AML knowledge.",
+  "salutation": "Dear KPMG Hiring Team,",
+  "paragraphs": [
+    "I am writing to apply for the Analyst role at KPMG in Bangalore. As an IIT (ISM) Dhanbad Computer Science graduate currently working as a Data / AI Engineer, I bring strong analytical rigor, a high bar for accuracy, and daily experience handling data across multiple systems --- and I am keen to apply these strengths to KYC due-diligence, where precision and process discipline matter most.",
+    "A core part of my current role is sourcing data from several systems and transferring it accurately into a primary platform. I build ingestion and ETL pipelines (Azure Data Factory, PySpark) that consolidate data from multiple sources under strict quality controls on a 15-minute refresh. That work maps closely to corporate-review responsibilities in this role: gathering documentation and evidence from varied sources, validating it to a high standard, and recording it accurately in the system of record.",
+    "I am used to delivering against quality and productivity targets and owning a pipeline of work end to end --- from a data-augmentation framework I validated across a 10-million-row dataset to managing day-to-day delivery at Reliance. My computer-science training gives me the discipline to understand policies and procedures quickly, apply them consistently, and recognise when a case needs escalation to a subject-matter expert. KYC/AML is a new domain for me, but I learn quickly and am eager to build that expertise.",
+    "KPMG's reputation for rigor and the breadth of its client work make it an ideal place to grow as an analyst. I would welcome the chance to discuss how my analytical and data-handling skills can contribute to your KYC team. Thank you for your time and consideration."
+  ],
+  "closing": "Sincerely,"
+}

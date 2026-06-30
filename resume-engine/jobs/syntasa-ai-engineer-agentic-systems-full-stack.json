@@ -1,0 +1,100 @@
+{
+  "name": "GORRE DINESH CHANDAN REDDY",
+  "phone": "7416767453",
+  "email": "gorredinesh21@gmail.com",
+  "github": "https://github.com/gorredinesh21",
+  "github_display": "GitHub",
+  "portfolio": "",
+  "portfolio_display": "Portfolio",
+  "education": [
+    {
+      "institute": "Indian Institute of Technology (ISM), Dhanbad",
+      "degree": "Bachelor of Technology in Computer Science and Engineering",
+      "duration": "Dec 2021 – May 2025",
+      "location": "Dhanbad, India",
+      "details": [
+        "Relevant Coursework: Data Structures & Algorithms, OOP, DBMS, Operating Systems, Software Engineering, Computer Networks"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Graduate Engineer Trainee (Software/Data Engineer)",
+      "company": "Reliance Industries Ltd.",
+      "duration": "Aug 2025 – Present",
+      "location": "Mumbai, India",
+      "points": [
+        "Developed a full-stack web application integrating Databricks Genie, enabling conversational query interfaces and secure OAuth 2.0 authentication for external access, directly supporting AI-driven workflows.",
+        "Designed and implemented a modular retrieval service and semantic routing layer to manage and dynamically direct requests across 120+ tables organized into 9 logical spaces, overcoming system limitations for AI data access.",
+        "Built and maintained near real-time data ingestion pipelines (ADF) with Landing $\\rightarrow$ Bronze $\\rightarrow$ Silver transformations, ensuring data availability and preparation for AI model consumption."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Tinder AI Coach",
+      "tech_stack": "Python, FastAPI, LangChain, Google Gemini, RAG",
+      "repo_link": "https://github.com/gorredinesh21/TINDER_MCP_AI",
+      "points": [
+        "Developed a FastAPI-powered web application enabling users to manage and optimize their entire Tinder profile (bio, prompts, photos) from a centralized interface, demonstrating full-stack AI application development.",
+        "Integrated Google Gemini (gemini-2.5-flash) for multimodal photo analysis, providing actionable feedback to enhance user profile presentation, directly supporting AI-driven user experience improvements.",
+        "Curated and integrated a knowledge base on the Indian dating landscape into an AI coach, grounding advice in local context and demonstrating RAG techniques for enhanced LLM application performance."
+      ]
+    },
+    {
+      "title": "FinNest — Online Banking Application",
+      "tech_stack": "Java, Spring Boot, Spring Data JPA, MySQL, React",
+      "repo_link": "https://github.com/gorredinesh21/FinNest",
+      "points": [
+        "Architected and developed a layered Spring Boot REST API backend for a banking application, demonstrating robust backend service development for data-driven systems.",
+        "Implemented secure JWT authentication and an email-verification workflow, ensuring secure access to protected endpoints, crucial for production AI systems.",
+        "Built a transaction engine for financial operations with balance validation and audit logging, showcasing experience with complex data processing and system integrations."
+      ]
+    },
+    {
+      "title": "CricKart — Full-Stack E-Commerce Platform",
+      "tech_stack": "React, Redux, Node.js, Express, MongoDB, Stripe",
+      "repo_link": "https://github.com/gorredinesh21/CricKart",
+      "points": [
+        "Developed an end-to-end e-commerce platform with a Node.js/Express REST API and a React/Redux frontend, demonstrating full-stack development capabilities for user-facing applications.",
+        "Implemented JWT authentication with role-based access control and a password-reset flow, showcasing experience with secure API development.",
+        "Integrated Stripe for payment processing and Cloudinary for image hosting, highlighting experience with external API integrations."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "AI & LLM Frameworks",
+      "items": "LangChain, RAG, LLMs, Google Gemini"
+    },
+    {
+      "category": "Backend Development",
+      "items": "Python, FastAPI, Node.js, Express.js, Java, Spring Boot, Spring Data JPA, Hibernate, REST APIs, Microservices, JWT, OAuth 2.0"
+    },
+    {
+      "category": "Data Engineering & Pipelines",
+      "items": "ADF, ETL, Databricks, PySpark, SQL, Data Transformation"
+    },
+    {
+      "category": "Databases",
+      "items": "MySQL, MongoDB, PostgreSQL, SQLite"
+    },
+    {
+      "category": "Cloud & Deployment",
+      "items": "GCP (implied by Databricks), AWS (implied by ADF), Azure (implied by ADF), Docker"
+    },
+    {
+      "category": "Programming Languages",
+      "items": "Python, Java, JavaScript, SQL, C++, C"
+    },
+    {
+      "category": "Frontend Development",
+      "items": "React, Redux"
+    },
+    {
+      "category": "Tools & Concepts",
+      "items": "Git, System Design, OOP, DSA, DBMS"
+    }
+  ],
+  "achievements": []
+}

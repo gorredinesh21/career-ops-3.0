@@ -1,0 +1,134 @@
+:root {
+  --bg: #0b0e14;
+  --panel: #141925;
+  --panel-2: #1b2230;
+  --border: #283145;
+  --text: #e6e9f0;
+  --muted: #8a93a6;
+  --accent: #5b9cff;
+  --green: #3fb950;
+  --amber: #d29922;
+  --red: #f85149;
+  --purple: #bc8cff;
+  --radius: 12px;
+  --mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(1200px 600px at 80% -10%, #16203a 0%, var(--bg) 55%);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+}
+
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+code { font-family: var(--mono); color: var(--accent); font-size: .85em; }
+
+.topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 24px; border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; background: rgba(11,14,20,.85); backdrop-filter: blur(8px); z-index: 5;
+}
+.brand { display: flex; gap: 14px; align-items: center; }
+.logo { font-size: 26px; color: var(--accent); }
+.topbar h1 { margin: 0; font-size: 18px; letter-spacing: .3px; }
+.topbar p { margin: 2px 0 0; font-size: 12px; max-width: 520px; }
+.topbar-right { display: flex; align-items: center; gap: 14px; }
+.toggle { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); cursor: pointer; }
+.btn {
+  background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
+  padding: 7px 14px; border-radius: 8px; cursor: pointer; font-size: 13px;
+}
+.btn:hover { border-color: var(--accent); }
+
+main { padding: 24px; max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+.kpi {
+  background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 16px 18px;
+}
+.kpi .v { font-size: 28px; font-weight: 700; font-family: var(--mono); }
+.kpi .l { color: var(--muted); font-size: 12px; margin-top: 4px; text-transform: uppercase; letter-spacing: .5px; }
+.kpi.accent .v { color: var(--accent); }
+.kpi.green .v { color: var(--green); }
+.kpi.purple .v { color: var(--purple); }
+.kpi.amber .v { color: var(--amber); }
+
+.card {
+  background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px;
+}
+.card h2 { margin: 0 0 14px; font-size: 14px; font-weight: 600; color: var(--text); }
+.card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.card-head h2 { margin: 0; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+@media (max-width: 860px) { .grid-2 { grid-template-columns: 1fr; } }
+
+/* fixed-height box so Chart.js (maintainAspectRatio:false) sizes correctly */
+.chart-box { position: relative; height: 260px; width: 100%; }
+
+/* funnel */
+.funnel { display: flex; gap: 8px; flex-wrap: wrap; }
+.funnel .stage {
+  flex: 1; min-width: 96px; background: var(--panel-2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 12px; text-align: center;
+}
+.funnel .stage .n { font-size: 24px; font-weight: 700; font-family: var(--mono); }
+.funnel .stage .s { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: .4px; }
+.funnel .stage[data-g="offer"] .n { color: var(--green); }
+.funnel .stage[data-g="interview"] .n { color: var(--purple); }
+.funnel .stage[data-g="applied"] .n { color: var(--accent); }
+.funnel .stage[data-g="rejected"] .n, .funnel .stage[data-g="skip"] .n { color: var(--muted); }
+
+/* tables */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th { color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; }
+td.notes, td.role { white-space: normal; max-width: 280px; }
+tr:hover td { background: rgba(91,156,255,.05); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.score-badge { font-family: var(--mono); font-weight: 700; padding: 2px 8px; border-radius: 6px; background: var(--panel-2); }
+.score-hi { color: var(--green); } .score-mid { color: var(--amber); } .score-lo { color: var(--red); }
+
+select.status {
+  background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 4px 6px; font-size: 12px;
+}
+
+.search {
+  background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
+  border-radius: 8px; padding: 6px 10px; font-size: 13px; width: 230px;
+}
+.pill { background: var(--panel-2); border: 1px solid var(--border); border-radius: 999px; padding: 3px 12px; font-family: var(--mono); font-size: 12px; }
+.empty { color: var(--muted); padding: 16px 4px; font-style: italic; }
+.fallback { color: var(--muted); font-size: 12px; }
+
+/* filters row + smaller select width */
+.filters { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+select.search { width: auto; min-width: 120px; cursor: pointer; }
+.card-head h2 .pill { margin-left: 8px; }
+
+/* source chip in the daily jobs table */
+.src-tag {
+  display: inline-block; background: var(--panel-2); border: 1px solid var(--border);
+  border-radius: 999px; padding: 2px 9px; font-family: var(--mono); font-size: 11px;
+  color: var(--accent); text-transform: lowercase;
+}
+
+/* apply link + resume buttons in the postings table */
+.link-apply { font-weight: 600; }
+.btn-mini {
+  display: inline-block; background: var(--accent); color: #06122b; border: 1px solid var(--accent);
+  padding: 3px 9px; border-radius: 6px; font-size: 12px; font-weight: 600; margin-right: 5px;
+}
+.btn-mini:hover { text-decoration: none; filter: brightness(1.1); }
+.btn-mini.ghost { background: transparent; color: var(--accent); }
+.btn-mini.ghost:hover { background: rgba(91,156,255,.12); }
+
+footer { text-align: center; padding: 28px; }

@@ -1,0 +1,78 @@
+{
+  "name": "GORRE DINESH CHANDAN REDDY",
+  "phone": "7416767453",
+  "email": "gorredinesh21@gmail.com",
+  "github": "https://github.com/gorredinesh21",
+  "github_display": "GitHub",
+  "portfolio": "https://portfolio-eight-coral-tabh47k4e7.vercel.app/",
+  "portfolio_display": "Portfolio",
+  "education": [
+    {
+      "institute": "Indian Institute of Technology (ISM), Dhanbad",
+      "degree": "Bachelor of Technology in Computer Science and Engineering",
+      "duration": "Dec 2021 -- May 2025",
+      "location": "Dhanbad, India",
+      "details": [
+        "\\textbf{Relevant Coursework:} DSA, OOP, DBMS, Software Engineering, Computer Networks, Deep Learning"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Graduate Engineer Trainee (Data / AI Engineer)",
+      "company": "Reliance Industries Ltd.",
+      "duration": "Aug 2025 -- Present",
+      "location": "Mumbai, India",
+      "points": [
+        "\\textbf{Talk-to-Genie Platform} --- Built an external web application integrating Databricks Genie using OAuth-based authentication, enabling secure access outside Databricks with conversational interaction support.",
+        "\\textbf{Unified Genie Architecture} --- Designed a scalable RAG framework overcoming Databricks Genie's \\textbf{30-table limitation} by organizing \\textbf{120+ tables} across \\textbf{9 Genie spaces}.",
+        "\\textbf{Intelligent Query Routing Engine} --- Built semantic retrieval pipelines using table and column metadata to dynamically route prompts to relevant Genie spaces.",
+        "\\textbf{Near Real-Time Data Pipeline} --- Built ADF ingestion pipelines supporting \\textbf{15-minute refresh cycles} with Landing $\\rightarrow$ Bronze $\\rightarrow$ Silver transformations."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "CareerOS",
+      "tech_stack": "Python, Flask, SQLite, LangChain, LangGraph",
+      "repo_link": "https://github.com/gorredinesh21/JOB_APPLICATION_HANDLER-",
+      "points": [
+        "\\textbf{AI Job Discovery Engine} --- Built an end-to-end platform extracting job postings from LinkedIn, Indeed and Telegram and generating tailored resumes based on job requirements.",
+        "\\textbf{Multi-Agent LLM Workflow} --- The platform extracts job postings, gives a probability of the candidate getting the job, and creates customised resumes for each job posting based on the job description.",
+        "\\textbf{Resume Automation Dashboard} --- Developed an interactive dashboard with analytics, workflow execution and downloadable resume generation."
+      ]
+    },
+    {
+      "title": "GAN-Based Data Augmentation for Imbalanced Datasets",
+      "tech_stack": "Python, PyTorch, GANs, XGBoost, LightGBM",
+      "repo_link": "https://github.com/gorredinesh21/FINAL_YEAR_PROJECT/tree/main",
+      "points": [
+        "\\textbf{Synthetic Data Generation Pipeline} --- Built an end-to-end augmentation framework using Custom GAN and SMOTE to address class imbalance in tabular datasets. Used Credit cards dataset as a usecase (10000000+ Data points).",
+        "\\textbf{Custom GAN Architecture} --- Designed Generator ($128 \\rightarrow 256 \\rightarrow 512$, Tanh) and Discriminator ($512 \\rightarrow 256 \\rightarrow 128 \\rightarrow 1$) networks with Xavier initialization, LeakyReLU activations and BatchNorm for stable tabular GAN training.",
+        "\\textbf{Multi-Model Training Framework} --- Implemented ML models (Random Forest, XGBoost, LightGBM and Gradient Boosting) on real data and real+augmented data using 5-fold cross-validation.",
+        "\\textbf{Performance Improvement} --- Brought down False Negatives to just 9 in a dataset containing 10000000+ data points, Recall value increased from 0.91 to 0.99."
+      ]
+    },
+    {
+      "title": "Tinder AI Coach",
+      "tech_stack": "Python, FastAPI, LangChain, Google Gemini, Hugging Face, Ollama",
+      "repo_link": "https://github.com/gorredinesh21/TINDER_MCP_AI",
+      "points": [
+        "\\textbf{Web-Based Profile Automation} --- Built a FastAPI dashboard where users manage and update their entire Tinder profile (bio, prompts and photos) from one place; the system standardizes and optimizes the inputs and writes them back to the live account, so users never open the Tinder app directly.",
+        "\\textbf{Multimodal Photo Analysis} --- Integrated Google Gemini (gemini-2.5-flash) to analyze profile photos and return actionable feedback on composition, presentation, lighting, background and photo selection.",
+        "\\textbf{India Dating Knowledge Base} --- Web-scraped and curated data on the Indian dating landscape (profile norms, preferences and photo best-practices) into a knowledge base that grounds the coach's profile and messaging advice in the local context."
+      ]
+    }
+  ],
+  "skills": [
+    { "category": "Programming Languages / Databases", "items": "Python, SQL, PostgreSQL, C++, C" },
+    { "category": "Data Engineering", "items": "Databricks, PySpark, ADF, ADLS Gen2, Apache Spark, ETL, Data Warehousing, AWS" },
+    { "category": "Gen AI", "items": "LangChain, LangGraph, Hugging Face, Ollama, Agentic AI, MCP, RAG, Fine-tuning, FAISS, ChromaDB, FastAPI" },
+    { "category": "ML and DL", "items": "Machine Learning, Deep Learning, NLP, Computer Vision, CNN, LSTMs, BERT, Transformers, Transfer Learning, GANs, XAI, OCR, TensorFlow, PyTorch, Keras, MLOps" }
+  ],
+  "achievements": [
+    "Secured AIR \\textbf{2903} in JEE Advanced and AIR \\textbf{4616} in JEE Mains",
+    "Ranked among \\textbf{Top 200 teams out of 18,500+ teams} in Amazon ML Challenge",
+    "Participated in Hackfest'23 organized at IIT Dhanbad"
+  ]
+}

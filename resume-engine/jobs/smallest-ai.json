@@ -1,0 +1,10 @@
+{
+  "_job": "Smallest AI — Research Data Engineer (data-centric AI / speech, large-scale messy data)",
+  "summary": "Data / AI engineer focused on large-scale, messy, real-world data: builds PySpark Landing $\\rightarrow$ Bronze $\\rightarrow$ Silver $\\rightarrow$ Gold pipelines, near-real-time ADF ingestion, and data-centric ML (custom GAN + SMOTE lifting recall 0.91 $\\rightarrow$ 0.99 on 10M+ rows). Strong Python; comfortable turning raw data into training-ready datasets. IIT (ISM) Dhanbad CSE.",
+  "skills": [
+    { "category": "Data Engineering", "items": "Databricks, PySpark, ADF, ADLS Gen2, Apache Spark, ETL, Data Warehousing, AWS" },
+    { "category": "ML and DL", "items": "Machine Learning, Deep Learning, GANs, Data Augmentation, NLP, Computer Vision, CNN, LSTMs, Transformers, OCR, TensorFlow, PyTorch, Keras, MLOps" },
+    { "category": "Programming Languages / Databases", "items": "Python, SQL, PostgreSQL, C++, C" },
+    { "category": "Gen AI", "items": "LangChain, LangGraph, Agentic AI, MCP, RAG, FAISS, ChromaDB, Hugging Face, Ollama, FastAPI" }
+  ]
+}

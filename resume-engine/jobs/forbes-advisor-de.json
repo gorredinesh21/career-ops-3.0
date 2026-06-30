@@ -1,0 +1,10 @@
+{
+  "_job": "Forbes Advisor — Data Engineer L2 (remote India; Python/SQL/Airflow/BigQuery, API ingestion, ETL/ELT)",
+  "summary": "Data Engineer who builds and runs production ingestion + ETL/ELT pipelines: PySpark Landing $\\rightarrow$ Bronze $\\rightarrow$ Silver $\\rightarrow$ Gold on Databricks, near-real-time Azure Data Factory ingestion (15-min refresh), and strong Python/SQL. Comfortable with API data ingestion, orchestration, and cloud data warehousing. IIT (ISM) Dhanbad CSE.",
+  "skills": [
+    { "category": "Data Engineering", "items": "Python, SQL, PySpark, Apache Spark, Databricks, Azure Data Factory, ADLS Gen2, ETL/ELT, API Ingestion, Orchestration, Data Warehousing, AWS" },
+    { "category": "Programming Languages / Databases", "items": "Python, SQL, PostgreSQL, C++, C" },
+    { "category": "ML and DL", "items": "Machine Learning, Deep Learning, GANs, Data Augmentation, NLP, Computer Vision, OCR, TensorFlow, PyTorch, Keras, MLOps" },
+    { "category": "Gen AI", "items": "LangChain, LangGraph, Agentic AI, MCP, RAG, FAISS, ChromaDB, Hugging Face, Ollama, FastAPI" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "_note": "Versatile cover letter. Replace [Company], [the role], and the [reason ...] placeholder per application. Keep to one page.",
+  "salutation": "Dear Hiring Team,",
+  "paragraphs": [
+    "I am a Data / AI Engineer at Reliance Industries and an IIT (ISM) Dhanbad Computer Science graduate, writing to apply for [the role] at [Company]. In a little over a year I have shipped production Generative AI and data-engineering systems end to end, and I am eager to bring that range and ownership to your team.",
+    "At Reliance I designed UnifiedGenie, a Retrieval-Augmented-Generation framework that scaled Databricks Genie beyond its 30-table limit to 120+ tables across 9 spaces, paired with a semantic query-routing engine; and I built Talk-to-Genie, an external OAuth web application that delivered that system to users outside Databricks. In parallel I run near-real-time Azure Data Factory ingestion on a 15-minute refresh and PySpark Landing $\\rightarrow$ Bronze $\\rightarrow$ Silver $\\rightarrow$ Gold pipelines.",
+    "I build across the full stack of modern AI. CareerOS is a multi-agent LangGraph platform that sources roles and generates tailored resumes; Tinder AI Coach is an MCP-based application using multimodal Google Gemini; and my custom GAN + SMOTE framework cut false negatives to nine and raised recall from 0.91 to 0.99 on a 10M-row dataset. I am equally at home in LLM and agentic systems, machine learning, and data engineering, grounded in strong CSE fundamentals (top 200 of 18,500+ teams in the Amazon ML Challenge).",
+    "I am drawn to [Company] because [reason --- e.g. the opportunity to own GenAI and agentic systems within a strong engineering culture]. I would welcome the chance to discuss how I can contribute to [the role], and I have attached my resume for your review. Thank you for your time and consideration."
+  ],
+  "closing": "Sincerely,"
+}

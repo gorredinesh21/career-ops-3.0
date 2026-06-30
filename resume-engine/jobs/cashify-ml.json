@@ -1,0 +1,9 @@
+{
+  "_job": "Cashify — Machine Learning Intern (Gurgaon; Python, Deep Learning, PyTorch/TensorFlow; 3mo + PPO)",
+  "skills": [
+    { "category": "ML and DL", "items": "Machine Learning, Deep Learning, PyTorch, TensorFlow, Keras, NLP, Computer Vision, CNN, LSTMs, Transformers, GANs, OCR, MLOps" },
+    { "category": "Gen AI", "items": "LangChain, LangGraph, Agentic AI, MCP, RAG, Fine-tuning, FAISS, ChromaDB, Hugging Face, Ollama, FastAPI" },
+    { "category": "Programming Languages / Databases", "items": "Python, SQL, PostgreSQL, C++, C" },
+    { "category": "Data Engineering", "items": "Databricks, PySpark, ADF, ADLS Gen2, Apache Spark, ETL, Data Warehousing, AWS" }
+  ]
+}

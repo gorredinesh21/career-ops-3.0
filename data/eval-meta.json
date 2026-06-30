@@ -1,0 +1,96 @@
+{
+  "https://in.linkedin.com/jobs/view/ai-engineer-agentic-systems-full-stack-at-syntasa-4428825813": {
+    "company": "Syntasa",
+    "title": "AI Engineer (Agentic Systems, Full-Stack)",
+    "url": "https://in.linkedin.com/jobs/view/ai-engineer-agentic-systems-full-stack-at-syntasa-4428825813",
+    "min_experience_required": 1,
+    "best_score": 4.7,
+    "best_resume": "FULL_STACK",
+    "best_verdict": "strong",
+    "matched": [
+      "Agentic systems, LLMs, RAG",
+      "Full-stack development (FastAPI)",
+      "Cloud data pipelines (ADF)",
+      "Python, Java, SQL skills"
+    ],
+    "gaps": [
+      "Explicit performance optimization",
+      "Specific multi-agent orchestration",
+      "Clarify experience timeline"
+    ],
+    "reason": "Candidate demonstrates exceptional hands-on experience with agentic systems, LLMs (Gemini, LangChain, RAG), full-stack development, and cloud data pipelines, making them an outstanding technical fit.",
+    "per_resume": [
+      {
+        "resume": "FULL_STACK",
+        "score": 4.7,
+        "verdict": "strong"
+      },
+      {
+        "resume": "GEN_AI_ENGINEER",
+        "score": 4.5,
+        "verdict": "strong"
+      }
+    ],
+    "rated_at": "2026-06-30T10:20:39.368Z"
+  },
+  "https://in.linkedin.com/jobs/view/ai-engineer-at-automatr-4427345035": {
+    "company": "AutomatR",
+    "title": "AI Engineer",
+    "url": "https://in.linkedin.com/jobs/view/ai-engineer-at-automatr-4427345035",
+    "min_experience_required": 3,
+    "best_score": 1,
+    "best_resume": "FULL_STACK",
+    "best_verdict": "weak",
+    "matched": [
+      "Familiar with LLMs",
+      "Uses LangChain, RAG",
+      "Proficient in Python",
+      "Experience with FastAPI"
+    ],
+    "gaps": [
+      "Lacks required professional experience",
+      "No production-grade AI assistants",
+      "Missing deep agentic AI understanding",
+      "No multi-agent systems experience"
+    ],
+    "reason": "The candidate lacks the required professional experience and demonstrated systems-level expertise in production-grade AI assistants and agentic AI for a lead role.",
+    "per_resume": [
+      {
+        "resume": "FULL_STACK",
+        "score": 1,
+        "verdict": "weak"
+      },
+      {
+        "resume": "GEN_AI_ENGINEER",
+        "score": 0,
+        "verdict": "weak"
+      }
+    ],
+    "rated_at": "2026-06-30T10:21:38.941Z"
+  },
+  "https://in.linkedin.com/jobs/view/ai-engineer-at-bnp-paribas-4376598181": {
+    "company": "BNP Paribas",
+    "title": "AI Engineer",
+    "url": "https://in.linkedin.com/jobs/view/ai-engineer-at-bnp-paribas-4376598181",
+    "min_experience_required": 2,
+    "best_score": 0,
+    "best_resume": "FULL_STACK",
+    "best_verdict": "weak",
+    "matched": [],
+    "gaps": [],
+    "reason": "error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash",
+    "per_resume": [
+      {
+        "resume": "FULL_STACK",
+        "score": 0,
+        "verdict": "weak"
+      },
+      {
+        "resume": "GEN_AI_ENGINEER",
+        "score": 0,
+        "verdict": "weak"
+      }
+    ],
+    "rated_at": "2026-06-30T10:21:39.720Z"
+  }
+}

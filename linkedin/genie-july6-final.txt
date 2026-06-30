@@ -1,0 +1,25 @@
+Heads-up if you build on Databricks Genie: the pricing model changes on July 6, and it'll quietly affect a lot of teams.
+
+Quick context: Genie is Databricks' natural-language layer for data — ask a question in plain English, get an answer (or a pipeline, dashboard, or fix from Genie Code). Until now, that AI usage hasn't been metered on its own. From July 6, all of it — Genie Spaces, Genie Code, and Genie One — moves to pay-as-you-go, billed in DBUs (Databricks Units, the platform's usage currency). What that means in practice:
+
+1) Every user gets 150 free DBUs of LLM usage per month (~$10.50 in US-East). Anything beyond that is billed. For a human poking at data interactively, that allowance covers a fair amount — so most individual exploration stays cheap.
+
+2) The trap: service principals get zero free allowance. A service principal is the non-human identity that runs your automated jobs — scheduled pipelines, apps, agents. So your interactive notebooks feel free while your production workloads are billed from the very first call. That's the line item most teams will overlook.
+
+3) You can't look backwards to plan. The system tables that track Genie spend only start filling after billing begins on the 6th — there's no historical baseline to estimate from. If you want numbers before then, you have to instrument now.
+
+4) There's a new Budgets feature: set spend caps and alerts per account, workspace, user group, or individual user, so you find out you're over before the invoice does. Turn it on ahead of time, not after a surprise bill.
+
+Why this hits home for me: when Genie capped a single space at ~30 tables and we had 120+, I built UnifiedGenie — instead of cramming everything into a few huge spaces, I split it into many focused spaces and put a semantic router on top that reads table/column metadata and sends each question to the right space.
+
+The original goal was purely answer quality. A smaller, more relevant search space means better retrieval and fewer hallucinations — a big space full of loosely related tables just adds noise.
+
+But under usage-based pricing, that same routing layer turns into a cost control. Less context shipped to the model per query means fewer DBUs burned per question. The decision I made for accuracy now also saves money — which is the quiet lesson here: good architecture and low cost usually point the same direction. You just don't see the second benefit until someone attaches a meter.
+
+So if you run Genie in production, two things worth doing before July 6:
+→ Audit which Genie calls run under a service principal vs. a real user (that's where the bill lives).
+→ Turn on Budgets and set alerts now, while you still can.
+
+How are you planning to govern Genie spend once the meter starts?
+
+#Databricks #GenAI #DataEngineering #RAG #FinOps

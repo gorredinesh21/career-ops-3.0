@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────────────────────────────────
+# HARD EXCLUDES — never publish (secrets + third-party PII)
+# ─────────────────────────────────────────────────────────────────────────
+
+# Secrets / credentials (tokens, API keys, login sessions)
+.env
+**/.env
+*.session
+*.session-journal
+.mcp.json
+.claude/settings.local.json
+.claude/memory/
+
+# LinkedIn data export + any CSV (contains the user's AND third parties' PII:
+# emails, phone numbers, messages, invitations). Never goes to a public repo.
+*.csv
+
+# ─────────────────────────────────────────────────────────────────────────
+# Generated / dependencies
+# ─────────────────────────────────────────────────────────────────────────
+node_modules/
+.resolved-prompt-*
+bun.lock
+.update-dismissed
+.update-lock
+career-dashboard
+
+# OS
+.DS_Store
+*.mov
+*.mp4
+
+# NOTE: personal job-search data (cv.md, config/profile.yml, reports/, output/
+# resumes, data/ tracker, portals.yml, modes/_profile.md) is intentionally
+# COMMITTED to this repo per the owner's choice — it is NOT ignored.
+
+# career-ops-3.0 runtime scratch
+tmp/

@@ -1,0 +1,5 @@
+# Secrets & token — never commit
+.env
+.env.burner
+token.json
+token.burner.json

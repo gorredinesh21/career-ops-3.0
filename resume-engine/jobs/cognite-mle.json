@@ -1,0 +1,10 @@
+{
+  "_job": "Cognite — Machine Learning Engineer (engineering-first MLE; Python, PyTorch/HF, PySpark/SQL at scale, Docker/Linux/MLOps, RAG + LangGraph good-to-haves; Bengaluru)",
+  "summary": "Machine learning engineer who treats ML as production software: production Python services, PySpark/ADF pipelines (Landing to Bronze to Silver), and PyTorch/Hugging Face model work — from a RAG framework scaling Databricks Genie to 120+ tables across 9 spaces to multi-agent LangGraph systems. IIT (ISM) Dhanbad CSE.",
+  "skills": [
+    { "category": "ML and DL", "items": "Machine Learning, Deep Learning, PyTorch, TensorFlow, Hugging Face, Keras, NLP, Computer Vision, Transformers, BERT, CNN, LSTMs, GANs, OCR, MLOps" },
+    { "category": "Data Engineering", "items": "Python, PySpark, Apache Spark, SQL, Databricks, ADF, ADLS Gen2, ETL, Data Warehousing, AWS, Docker, Linux" },
+    { "category": "Gen AI", "items": "LangChain, LangGraph, Agentic AI, RAG, Vector Databases, FAISS, ChromaDB, Fine-tuning, MCP, FastAPI" },
+    { "category": "Programming Languages / Databases", "items": "Python, SQL, PostgreSQL, C++, C" }
+  ]
+}

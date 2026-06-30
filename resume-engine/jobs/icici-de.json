@@ -1,0 +1,9 @@
+{
+  "_job": "ICICI Lombard — Analytics & Data Engineering Intern (Mumbai; Data Engineering / Data Viz / Analytics Automation / BI)",
+  "skills": [
+    { "category": "Data Engineering", "items": "Python, SQL, PySpark, Apache Spark, Databricks, Azure Data Factory, ADLS Gen2, ETL/ELT, Data Warehousing, Business Intelligence, AWS" },
+    { "category": "Programming Languages / Databases", "items": "Python, SQL, PostgreSQL, C++, C" },
+    { "category": "ML and DL", "items": "Machine Learning, Deep Learning, GANs, Data Augmentation, NLP, Computer Vision, OCR, TensorFlow, PyTorch, Keras, MLOps" },
+    { "category": "Gen AI", "items": "LangChain, LangGraph, Agentic AI, MCP, RAG, FAISS, ChromaDB, Hugging Face, Ollama, FastAPI" }
+  ]
+}

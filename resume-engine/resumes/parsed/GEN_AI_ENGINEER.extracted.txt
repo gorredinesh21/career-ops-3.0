@@ -1,0 +1,53 @@
+GORRE DINESH CHANDAN REDDY
+ 7416767453  — # gorredinesh21@gmail.com  —§ GitHub  —  Portfolio
+Education
+Indian Institute of Technology (ISM), DhanbadDec 2021 – May 2025
+BachelorofTechnologyinComputerScienceandEngineeringDhanbad,India
+• Relevant Coursework: DSA, OOP, DBMS, Software Engineering, Computer Networks, Deep Learning
+Experience
+Reliance Industries Ltd.Aug 2025 – Present
+GraduateEngineerTrainee(Data/AIEngineer)Mumbai,India
+• Talk-to-Genie Platform — Built an external web application integrating Databricks Genie using OAuth-based authentication, enabling secure
+access outside Databricks with conversational interaction support.
+• Unified Genie Architecture — Designed a scalable RAG framework overcoming Databricks Genie’s 30-table limitation by organizing 120+
+tables across 9 Genie spaces.
+• Intelligent Query Routing Engine — Built semantic retrieval pipelines using table and column metadata to dynamically route prompts to
+relevant Genie spaces.
+• Near Real-Time Data Pipeline — Built ADF ingestion pipelines supporting 15-minute refresh cycles with Landing→ Bronze→ Silver
+transformations.
+Projects
+CareerOS| Python, Flask, SQLite, LangChain, LangGraph| GitHub
+• AI Job Discovery Engine — Built an end-to-end platform extracting job postings from LinkedIn, Indeed and Telegram and generating tailored
+resumes based on job requirements.
+• Multi-Agent LLM Workflow — The platform extracts job postings , gives a probability of the candidate getting the job ,creates customised
+resumes for each job posting based on the job description
+• Resume Automation Dashboard — Developed an interactive dashboard with analytics, workflow execution and downloadable resume
+generation.
+GAN-Based Data Augmentation for Imbalanced Datasets
+| Python, PyTorch, GANs, XGBoost, LightGBM| GitHub
+• Synthetic Data Generation Pipeline — Built an end-to-end augmentation framework using Custom GAN and SMOTE to address class
+imbalance in tabular datasets. Used Credit cards dataset as a usecase (10000000+ Data points).
+• Custom Gan Architecture — Designed Generator (128→256→512, Tanh) and Discriminator (512→256→128→1) networks with Xavier
+initialization, LeakyReLU activations and BatchNorm for stable tabular GAN training.
+• Multi-Model Training Framework — Implemented ML models (Random Forest, XGBoost, LightGBM and Gradient Boosting) on real data and
+real+augmented data using 5-fold cross-validation.
+• Performance Improvement — Brought down False Negatives vlaues to just 9 in a dataset containing 10000000+ data points, Recall value
+increased from 0.91 to 0.99
+Tinder AI Coach| Python, FastAPI, LangChain, Google Gemini, Hugging Face, Ollama| GitHub
+• Web-Based Profile Automation — Built a FastAPI dashboard where users manage and update their entire Tinder profile (bio, prompts and
+photos) from one place; the system standardizes and optimizes the inputs and writes them back to the live account, so users never open the
+Tinder app directly.
+• Multimodal Photo Analysis — Integrated Google Gemini (gemini-2.5-flash) to analyze profile photos and return actionable feedback on
+composition, presentation, lighting, background and photo selection
+• India Dating Knowledge Base — Web-scraped and curated data on the Indian dating landscape (profile norms, preferences and photo
+best-practices) into a knowledge base that grounds the coach’s profile and messaging advice in the local context.
+Technical Skills
+Programming Languages / Databases: Python, SQL, PostgreSQL, C++, C
+Data Engineering: Databricks, PySpark, ADF, ADLS Gen2, Apache Spark, ETL, Data Warehousing, AWS
+Gen AI: LangChain, LangGraph, Hugging Face, Ollama, Agentic AI, MCP, RAG, Fine-tuning, FAISS, ChromaDB,FastAPI
+ML and DL: Machine Learning, Deep Learning, NLP, Computer Vision, CNN, LSTMs, BERT, Transformers, Transfer Learning, GANs, XAI, OCR,
+TensorFlow, PyTorch, Keras, MLOps
+Achievements
+• Secured AIR 2903 in JEE Advanced and AIR 4616 in JEE Mains
+• Ranked among Top 200 teams out of 18,500+ teams in Amazon ML Challenge
+• Participated in Hackfest’23 organized at IIT Dhanbad

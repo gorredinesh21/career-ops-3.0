@@ -1,0 +1,234 @@
+{
+  "projects": [
+    {
+      "repo": "FinNest",
+      "name": "FinNest",
+      "tech_stack": "Java",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "flagship",
+      "repo_link": "https://github.com/gorredinesh21/FinNest"
+    },
+    {
+      "repo": "CricKart",
+      "name": "CricKart",
+      "tech_stack": "JavaScript",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "flagship",
+      "repo_link": "https://github.com/gorredinesh21/CricKart"
+    },
+    {
+      "repo": "PORTFOLIO",
+      "name": "PORTFOLIO",
+      "tech_stack": "TypeScript",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "solid",
+      "repo_link": "https://github.com/gorredinesh21/PORTFOLIO"
+    },
+    {
+      "repo": "Startup-Intelligence-Platform",
+      "name": "Startup Intelligence Platform",
+      "tech_stack": "Python",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "flagship",
+      "repo_link": "https://github.com/gorredinesh21/Startup-Intelligence-Platform"
+    },
+    {
+      "repo": "Career-ops-2.0",
+      "name": "Career ops 2.0",
+      "tech_stack": "JavaScript",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "flagship",
+      "repo_link": "https://github.com/gorredinesh21/Career-ops-2.0"
+    },
+    {
+      "repo": "TINDER_MCP_AI",
+      "name": "TINDER MCP AI",
+      "tech_stack": "Python",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "flagship",
+      "repo_link": "https://github.com/gorredinesh21/TINDER_MCP_AI"
+    },
+    {
+      "repo": "JOB_APPLICATION_HANDLER-",
+      "name": "JOB APPLICATION HANDLER",
+      "tech_stack": "Jupyter Notebook",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "flagship",
+      "repo_link": "https://github.com/gorredinesh21/JOB_APPLICATION_HANDLER-"
+    },
+    {
+      "repo": "FINAL_YEAR_PROJECT",
+      "name": "FINAL YEAR PROJECT",
+      "tech_stack": "Jupyter Notebook",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "flagship",
+      "repo_link": "https://github.com/gorredinesh21/FINAL_YEAR_PROJECT"
+    },
+    {
+      "repo": "CREDIT_CARD_FRAUD_DETECTION",
+      "name": "CREDIT CARD FRAUD DETECTION",
+      "tech_stack": "",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "solid",
+      "repo_link": "https://github.com/gorredinesh21/CREDIT_CARD_FRAUD_DETECTION"
+    },
+    {
+      "repo": "BLOCKCHAIN",
+      "name": "BLOCKCHAIN",
+      "tech_stack": "JavaScript",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "solid",
+      "repo_link": "https://github.com/gorredinesh21/BLOCKCHAIN"
+    },
+    {
+      "repo": "GAN-BASED-TABULAR-DATA-AUGMENTATION-",
+      "name": "GAN BASED TABULAR DATA AUGMENTATION",
+      "tech_stack": "Jupyter Notebook",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "flagship",
+      "repo_link": "https://github.com/gorredinesh21/GAN-BASED-TABULAR-DATA-AUGMENTATION-"
+    },
+    {
+      "repo": "BANGLORE_HOUSE_PRICE_PREDICTOR",
+      "name": "BANGLORE HOUSE PRICE PREDICTOR",
+      "tech_stack": "Jupyter Notebook",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "minor",
+      "repo_link": "https://github.com/gorredinesh21/BANGLORE_HOUSE_PRICE_PREDICTOR"
+    },
+    {
+      "repo": "ImageEntityExtraction",
+      "name": "ImageEntityExtraction",
+      "tech_stack": "Jupyter Notebook",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "solid",
+      "repo_link": "https://github.com/gorredinesh21/ImageEntityExtraction"
+    },
+    {
+      "repo": "MARS_LANDMARK_DETECTION",
+      "name": "MARS LANDMARK DETECTION",
+      "tech_stack": "Jupyter Notebook",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "solid",
+      "repo_link": "https://github.com/gorredinesh21/MARS_LANDMARK_DETECTION"
+    },
+    {
+      "repo": "MOVIE_RECOMENDATION_SYSTEM",
+      "name": "MOVIE RECOMENDATION SYSTEM",
+      "tech_stack": "Jupyter Notebook",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "minor",
+      "repo_link": "https://github.com/gorredinesh21/MOVIE_RECOMENDATION_SYSTEM"
+    },
+    {
+      "repo": "SINGAPORE_HOUSE_PRICE_PREDICTOR",
+      "name": "SINGAPORE HOUSE PRICE PREDICTOR",
+      "tech_stack": "Jupyter Notebook",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "minor",
+      "repo_link": "https://github.com/gorredinesh21/SINGAPORE_HOUSE_PRICE_PREDICTOR"
+    },
+    {
+      "repo": "claude_streamlit",
+      "name": "claude streamlit",
+      "tech_stack": "Python",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "minor",
+      "repo_link": "https://github.com/gorredinesh21/claude_streamlit"
+    },
+    {
+      "repo": "flask_deployment",
+      "name": "flask deployment",
+      "tech_stack": "Python",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "minor",
+      "repo_link": "https://github.com/gorredinesh21/flask_deployment"
+    },
+    {
+      "repo": "The-Bit-Lords---IIT-ISM-Dhanbhad",
+      "name": "The Bit Lords IIT ISM Dhanbhad",
+      "tech_stack": "",
+      "one_liner": "This is our project for Hackfest",
+      "bullets": [],
+      "domains": [],
+      "tier": "minor",
+      "repo_link": "https://github.com/gorredinesh21/The-Bit-Lords---IIT-ISM-Dhanbhad"
+    },
+    {
+      "repo": "OS-PROJECRT",
+      "name": "OS PROJECRT",
+      "tech_stack": "C++",
+      "one_liner": "MULTI THREADED CLIENT PROXY SEVER ",
+      "bullets": [],
+      "domains": [],
+      "tier": "minor",
+      "repo_link": "https://github.com/gorredinesh21/OS-PROJECRT"
+    },
+    {
+      "repo": "bank-managment-system",
+      "name": "bank managment system",
+      "tech_stack": "",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "minor",
+      "repo_link": "https://github.com/gorredinesh21/bank-managment-system"
+    },
+    {
+      "repo": "flappy-bird-game",
+      "name": "flappy bird game",
+      "tech_stack": "",
+      "one_liner": "simple flappy bird game using c++",
+      "bullets": [],
+      "domains": [],
+      "tier": "minor",
+      "repo_link": "https://github.com/gorredinesh21/flappy-bird-game"
+    },
+    {
+      "repo": "snake-game-",
+      "name": "snake game",
+      "tech_stack": "",
+      "one_liner": "",
+      "bullets": [],
+      "domains": [],
+      "tier": "minor",
+      "repo_link": "https://github.com/gorredinesh21/snake-game-"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+KIND     TITLE                                    USERNAME                   ID
+----------------------------------------------------------------------------------------------------
+channel  Aei movies                               @aeimovies                 -1001745158718
+channel  Aeibackupp                               @aeibackuppp               -1001791340297
+channel  Ahiru No Sora | English Dub              @Ahiru_No_Sora_English     -1001245346426
+channel  Anime10x                                                            -1001698000035
+channel  Apna College                                                        -1001662502378
+channel  Attack on Titan                          @Attack_on_Titan_Season_   -1001504377537
+channel  Avatar: The last airbender                                          -1001576541548
+channel  Black Bullet (Dual)                      @Anime_Hub_black_bullet    -1001178716411
+channel  Bleach English Dubbed                                               -1001433001292
+channel  Blue Lock                                                           -1001261670287
+channel  Chainsaw Man Anime | Bleach                                         -1001512243588
+channel  Cinesandhadi                                                        -1001554970191
+channel  Classroom Of the Elite Season 1 & 2 En   @classroomofeliteengdub    -1001419197400
+channel  Code Geass English Dub                                              -1001474167856
+channel  Code Library                             @CodeLibrary1              -1001358395718
+channel  CowBoy Bepop                             @CowboyBepophd             -1001611417005
+channel  CS Files                                                            -1001920582903
+channel  Cʀɪᴄ_Iɴsɪᴅᴇʀ365                                                     -1002011847413
+channel  Dead pixels Hotstar                      @Dead_Pixels2              -1001840472240
+channel  Divya Deals                              @divya_18_deals            -1002421577227
+channel  Flash⚡Gurujioffer                        @FlashGurujioffer          -1001671860375
+channel  Fugou Keiji: Balance Unlimited | The M   @Fugou_Keij_Dual           -1001321488759
+channel  GINTAMA (1080p)                          @GintamaAnimeNHK           -1001272217091
+channel  GINTAMA (1080p)                                                     -1001829847783
+channel  Gintama Dual Audio                       @gintamadual               -1001587744330
+channel  Golden Kamuy Season 5                    @Golden_Kamuy_Season       -1001412835341
+channel  HOLLYWOOD/BOLLYWOOD MOVIES ❤                                        -1001221794277
+channel  Kabaneri of the Iron Fortress            @Kabaneri_of_The_Iron_Fo   -1001490874306
+channel  Kingdom                                  @Kingdom_Dub               -1001661695450
+channel  KINGDOM SEASON 3                         @Season_3_Kingdom          -1001574032275
+channel  Made In Abyss Dub                        @c_24_as                   -1001550371198
+channel  Movierulz                                                           -1001222902145
+channel  Naruto English Dubbed                    @NarutoEnglishDubbed77     -1001400888546
+channel  Naruto in English Dubbed                 @Naruto_English_Dubbed1    -1001704650649
+channel  Naruto Shippuden English Dubbed                                     -1001674718438
+channel  Noragami                                                            -1001956781248
+channel  One Piece (English Dubbed)               @One_Piece_Englsih_Dubbe   -1001264007530
+channel  One Piece in English Dub                 @One_Piece_in_English_Du   -1001581726203
+channel  Ongoing Library 2.0 - Summer 2026 🌻                                 -1002463749819
+channel  Opportunity Oracle                       @ojasvi_iitb               -1002035397557
+channel  Otaku Library - Sunmer 2026 🌻                                       -1001248435498
+channel  Overlord                                 @Overlord_Dub              -1001326219505
+channel  Ranking of Kings English Dubbed                                     -1001549430077
+channel  RTX                                                                 -1002073955964
+channel  Stranger Things Season 4 - 1                                        -1001699663491
+channel  Suits Series                                                        -1001382968456
+channel  TechUprise - Exclusive Updates           @TechUprise_Updates        -1001918258764
+channel  The Big short (2015)                     @thebigshort2015bluray     -1001194780335
+channel  The Disastrous Life of Saiki K English   @The_Disastrous_Life_of_   -1001499127303
+channel  The Maid I Hired Recently is Mysteriou   @the_hired_maid_i_recent   -1001658052509
+channel  The Rising of the sheild hero            @rising_of_the_shield_he   -1001346184509
+channel  Tokyo Ghoul English Dub All Season                                  -1001285042088
+channel  TVF Pitchers 720p HEVC                                              -1001397652386
+channel  Wev                                                                 -1001816285695
+channel  Zom100 in Hindi dubbed                   @Zom_100_in_hindi_dubbed   -1001925750773
+channel  𝐕𝐈𝐊𝐀𝐑𝐀𝐌 𝐇𝐘𝐃𝐄𝐑𝐀𝐁𝐀𝐃𝐈 2016 🏏                                           -1001970884237
+channel  📼𝐑𝐞𝐭𝐫𝐨 𝐓𝐞𝐥𝐮𝐠𝐮 𝐑𝐢𝐩𝐬 📼                     @RetroTeluguRips           -1002747824641
+group    1A + 1B IIT (ISM) Dhanbad(updates only                              -1001637822647
+group    1A + 1B IIT (ISM) Dhanbad(updates only                              -604342686
+group    Aaa-I                                    @bvbgfuyergfuyeb           -1002708114798
+group    Chat gpt                                                            -1002019441464
+group    Chat gpt                                                            -897488325
+group    Club Inductions                                                     -1001692010754
+group    CodeISM 2025                                                        -1001731255400
+group    CS Discussions                                                      -1001960419177
+group    CyberLabs 2021                                                      -1001759895672
+group    Deepika and Kushu                                                   -1002051014705
+group    Deepika and Kushu                                                   -4268315633
+group    IIT (ISM) 2k21 Batch                                                -757388612
+group    ISM 2k21 Section A&B                                                -1001770759387
+group    LinkedIn Candidates                                                 -1001943402607
+group    movie bot                                                           -4611612093
+group    Movie botu                                                          -1002070634794
+group    Movie botu                                                          -4264104358
+group    Movies bot                                                          -876699806
+group    Myself                                                              -5257929618
+group    NVCTI                                                               -1001637503162
+group    Parichay 2.0 cultural inductions                                    -1001594202012
+group    Quiz Club IIT(ISM) 2022                                             -1001261911070
+group    REVENGERS                                                           -4170597367
+group    Sankalp                                                             -1001758088485
+group    Sankalp                                                             -754717817
+group    Science & Tech, IIT (ISM) DHANBAD                                   -1001750720811
+group    Suitachi                                                            -4942808089
+group    Yadagiri                                                            -4093770307
+
+Total: 85

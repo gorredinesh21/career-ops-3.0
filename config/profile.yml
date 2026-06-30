@@ -1,0 +1,94 @@
+# Career-Ops Profile Configuration
+# This is the single source of truth for your personal data across all modes.
+
+candidate:
+  full_name: "Gorre Dinesh Chandan Reddy"
+  email: "gorredinesh21@gmail.com"
+  phone: "+91 7416767453"
+  location: "Mumbai, India"
+  years_experience: 1            # ~1 yr professional exp
+  max_min_experience_years: 3    # only target roles whose stated minimum is <= 3 yrs
+  linkedin: "linkedin.com/in/gorre-dinesh-chandan-reddy-2a5a32219"
+  portfolio_url: "https://portfolio-eight-coral-tabh47k4e7.vercel.app/"
+  github: "github.com/gorredinesh21"
+  twitter: ""
+
+target_roles:
+  # Your North Star roles — what you're optimizing for
+  primary:
+    - "Generative AI Engineer"
+    - "AI/ML Engineer"
+    - "Data Engineer (AI/ML)"
+  # Archetypes help the evaluation system score fit
+  archetypes:
+    - name: "Generative AI / LLM Engineer"
+      level: "Mid"
+      fit: "primary"        # primary = dream role, secondary = good fit, adjacent = stretch
+    - name: "Agentic AI / Applied AI Engineer"
+      level: "Mid"
+      fit: "primary"
+    - name: "Data Engineer (Databricks / Azure / PySpark)"
+      level: "Mid"
+      fit: "primary"
+    - name: "Machine Learning Engineer"
+      level: "Mid"
+      fit: "secondary"
+    - name: "AI Solutions Engineer / Forward Deployed"
+      level: "Mid"
+      fit: "adjacent"
+
+narrative:
+  # Your professional headline (1 line)
+  headline: "Data/AI Engineer building production GenAI + data platforms — equally at home in LLM agents and PySpark pipelines"
+  # Your exit story — what makes you unique
+  exit_story: "IIT (ISM) Dhanbad CSE grad, ~1 year shipping production GenAI (RAG over 120+ tables, OAuth Genie web app) and near-real-time data pipelines at Reliance. Looking to move into a role with deeper GenAI/agentic ownership and stronger engineering culture."
+  # Your top 3-5 superpowers
+  superpowers:
+    - "Multi-disciplinary: real depth across GenAI (LangChain/LangGraph, RAG, agents), ML/DL, and Data Engineering — not a narrow specialist"
+    - "Ships production GenAI: scaled Databricks Genie past its 30-table limit to 120+ tables via a custom RAG + semantic routing framework"
+    - "End-to-end builder: from ADF/PySpark Landing→Bronze→Silver→Gold pipelines to multi-agent LLM apps"
+    - "Strong fundamentals: IIT CSE, Amazon ML Challenge top 200/18,500+"
+  # Proof points — projects, articles, case studies with measurable impact
+  proof_points:
+    - name: "UnifiedGenie (Reliance)"
+      url: ""
+      hero_metric: "RAG framework scaling Databricks Genie to 120+ tables across 9 spaces (past the 30-table cap)"
+    - name: "CareerOS"
+      url: "https://github.com/gorredinesh21/JOB_APPLICATION_HANDLER-"
+      hero_metric: "Multi-agent LangGraph job-discovery + tailored-resume platform"
+    - name: "GAN Data Augmentation"
+      url: "https://github.com/gorredinesh21/FINAL_YEAR_PROJECT"
+      hero_metric: "Recall 0.91 → 0.99; false negatives down to 9 on a 10M+ row dataset"
+    - name: "Tinder AI Coach"
+      url: "https://github.com/gorredinesh21/TINDER_MCP_AI"
+      hero_metric: "FastAPI app + multimodal Gemini photo analysis + India-context RAG knowledge base; writes optimized profile back to live account"
+  # Optional: dashboard/demo URL with credentials
+  # dashboard:
+  #   url: ""
+  #   password: ""
+
+compensation:
+  target_range: "₹10L-18L"       # Your target total comp (annual, INR)
+  currency: "INR"
+  current_ctc: "₹9L"             # Current CTC (for reference; avoid leading with this in negotiations)
+  minimum: "₹12L"                # Walk-away number (~30% hike over current; adjust if you'd go lower)
+  location_flexibility: "Open to Mumbai/Bengaluru/Hyderabad; remote preferred"
+
+location:
+  country: "India"
+  city: "Mumbai"
+  timezone: "IST"
+  visa_status: "Indian citizen; no sponsorship needed for India roles"
+  # For remote roles outside your country:
+  # onsite_availability: ""
+
+cv:
+  output_format: "html" # "html" (default) or "latex"
+  # (Optional) Canva resume design ID for visual CV generation via /career-ops pdf.
+  # canva_resume_design_id: "DAxxxxxxxxx"
+
+# Auto-PDF threshold during evaluation. Default 3.0. Raise to 4.0 to only
+# auto-generate PDFs for stronger matches.
+# Set to 0 (2026-06-10) per Dinesh: generate a SEPARATE tailored resume PDF for
+# EVERY evaluated job posting. Raise back to 3.0/4.0 if too many unused PDFs.
+auto_pdf_score_threshold: 0

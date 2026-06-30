@@ -1,0 +1,1016 @@
+# Portal Scanner Configuration  (India / GenAI + Data Engineering edition)
+# Used by /career-ops scan to discover new offers automatically.
+#
+# Strategy (4 levels):
+#   0. Local parser → per-company `parser:` script for SSR/static career pages (zero-token)
+#   1. Playwright → careers_url of each company (real-time, reliable)
+#   2. HTTP JSON (WebFetch) → per-company `api:` on tracked_companies
+#   3. WebSearch with site: filters (broad discovery, may be stale)
+#
+# NOTE on this config: the zero-token scanner (`node scan.mjs`) only fetches
+# companies whose careers_url is a Greenhouse / Ashby / Lever / Workable /
+# SmartRecruiters board (the "verified ATS boards" section below — these were
+# probed and confirmed live). Indian startups on Darwinbox / Keka / Zoho /
+# their own sites are listed as `scan_method: websearch`; those are picked up
+# by the AGENT scan (Playwright on careers_url + the search_queries), not by
+# `scan.mjs`. Run `/career-ops scan` (agent) for full coverage; `node scan.mjs`
+# for a fast, free pass over the verified boards only.
+
+# -- Location filter --  (ACTIVE — India-focused)
+# always_allow is checked BEFORE block, so a multi-country posting that names
+# an Indian city/region still passes even if it also lists a blocked hub.
+location_filter:
+  always_allow:
+    - "India"
+    - "Bengaluru"
+    - "Bangalore"
+    - "Hyderabad"
+    - "Mumbai"
+    - "Pune"
+    - "Gurgaon"
+    - "Gurugram"
+    - "Noida"
+    - "Delhi"
+    - "Chennai"
+    - "Kolkata"
+  allow:
+    - "Remote"
+    - "Hybrid"
+    - "India"
+    - "Bengaluru"
+    - "Bangalore"
+    - "Hyderabad"
+    - "Mumbai"
+    - "Pune"
+    - "Gurgaon"
+    - "Gurugram"
+    - "Noida"
+    - "Delhi"
+    - "Chennai"
+    - "Kolkata"
+    - "Ahmedabad"
+    - "Indore"
+    - "Jaipur"
+    - "Kochi"
+    - "Coimbatore"
+    - "Thiruvananthapuram"
+  block:
+    # Foreign-only hubs. always_allow (India cities) overrides these for
+    # multi-location postings. Only full, unambiguous names — no short tokens
+    # like "us" that would match substrings such as "house" or "campus".
+    - "United States"
+    - "USA"
+    - "United Kingdom"
+    - "London"
+    - "EMEA"
+    - "Germany"
+    - "Berlin"
+    - "Munich"
+    - "France"
+    - "Paris"
+    - "Singapore"
+    - "Dubai"
+    - "Abu Dhabi"
+    - "Canada"
+    - "Toronto"
+    - "Vancouver"
+    - "Australia"
+    - "Sydney"
+    - "Netherlands"
+    - "Amsterdam"
+    - "Spain"
+    - "Madrid"
+    - "Ireland"
+    - "Dublin"
+    - "Poland"
+    - "Brazil"
+    - "Philippines"
+
+# -- Title filter --
+# At least 1 positive must match AND 0 negatives must match (case-insensitive).
+title_filter:
+  # NOTE: matching is plain case-insensitive SUBSTRING (no word boundaries).
+  # Do NOT add bare "AI" or "ML" — they match "ai" in Mumbai/Chennai/Retail and
+  # "ml" in HTML/XML. Use specific multi-word phrases instead.
+  positive:
+    # -- GenAI / LLM / Agentic --
+    - "AI Engineer"
+    - "AI/ML"
+    - "(AI"
+    - "(ML"
+    - "AI Scientist"
+    - "AI Researcher"
+    - "AI Developer"
+    - "AI Platform"
+    - "Applied AI"
+    - "Generative AI"
+    - "GenAI"
+    - "Gen AI"
+    - "Conversational AI"
+    - "Voice AI"
+    - "LLM"
+    - "LLMOps"
+    - "NLP"
+    - "Agentic"
+    - "Computer Vision"
+    - "Prompt Engineer"
+    # -- ML / DL --
+    - "Machine Learning"
+    - "ML Engineer"
+    - "ML Scientist"
+    - "MLOps"
+    - "Deep Learning"
+    # -- Data Engineering / Science --
+    - "Data Engineer"
+    - "Data Engineering"
+    - "Data Scientist"
+    - "Data Science"
+    - "Data Platform"
+    - "Analytics Engineer"
+    - "Big Data"
+    - "Databricks"
+    - "PySpark"
+    - "Spark"
+    - "ETL"
+    # -- Adjacent --
+    - "Solutions Engineer"
+    - "Forward Deployed"
+    - "Platform Engineer"
+    # -- General Software Engineering (added 2026-06-10: include all SWE at
+    #    fresher/1yr/mid; the negative list still gates seniority + off-stack) --
+    - "Software Engineer"
+    - "Software Developer"
+    - "Software Development Engineer"
+    - "SDE"
+    - "Backend"
+    - "Back End"
+    - "Back-End"
+    - "Frontend"
+    - "Front End"
+    - "Front-End"
+    - "Full Stack"
+    - "Fullstack"
+    - "Full-Stack"
+    - "Web Developer"
+    - "Application Developer"
+    - "Programmer"
+    - "DevOps"
+    - "Site Reliability"
+    - "SRE"
+    - "Cloud Engineer"
+  negative:
+    # (Internships are NOW IN SCOPE — 2026-06-10 — do not re-add "Internship" here.)
+    # -- Seniority above a ~3-year-min ceiling (candidate has ~1 yr exp) --
+    - "Senior"
+    - "Sr."
+    - "Sr "
+    - "Staff"
+    - "Principal"
+    - "Lead"
+    - "Manager"
+    - "Director"
+    - "Head of"
+    - "VP"
+    - "Vice President"
+    - "Architect"
+    # -- Explicit high experience in title (4+ years and up) --
+    - "4+ year"
+    - "5+ year"
+    - "6+ year"
+    - "7+ year"
+    - "8+ year"
+    - "9+ year"
+    - "10+ year"
+    - "12+ year"
+    - "15+ year"
+    - ".NET"
+    - "Java "
+    - "iOS"
+    - "Android"
+    - "PHP"
+    - "Ruby"
+    - "Embedded"
+    - "Firmware"
+    - "FPGA"
+    - "ASIC"
+    - "Blockchain"
+    - "Web3"
+    - "Crypto"
+    - "Salesforce Admin"
+    - "SAP "
+    - "Oracle EBS"
+    - "Mainframe"
+    - "COBOL"
+  seniority_boost:
+    # These add relevance but are not required (you're targeting mid-level).
+    - "Senior"
+    - "Lead"
+    - "II"
+
+# -- Search queries --
+# Each query triggers a WebSearch (agent scan, Level 3). Tuned for the India
+# market: India job boards + startup boards + ATS boards filtered to India.
+search_queries:
+  # -- India job boards --
+  - name: LinkedIn — India GenAI/ML/DE
+    query: 'site:linkedin.com/jobs "AI Engineer" OR "Machine Learning Engineer" OR "Generative AI" OR "Data Engineer" India'
+    enabled: true
+
+  - name: Wellfound — India AI startups
+    query: 'site:wellfound.com "AI" OR "Machine Learning" OR "LLM" OR "Data Engineer" India'
+    enabled: true
+
+  - name: Instahyre — India AI/ML
+    query: 'site:instahyre.com "Machine Learning" OR "AI Engineer" OR "Data Engineer" OR "Generative AI"'
+    enabled: true
+
+  - name: Cutshort — India AI/ML
+    query: 'site:cutshort.io "Machine Learning" OR "AI Engineer" OR "Data Engineer" OR "LLM"'
+    enabled: true
+
+  - name: foundit — India AI/ML/DE
+    query: 'site:foundit.in "Machine Learning" OR "AI Engineer" OR "Data Engineer" OR "Generative AI"'
+    enabled: true
+
+  - name: Naukri — India GenAI/DE
+    query: 'site:naukri.com "Generative AI" OR "LLM" OR "Machine Learning Engineer" OR "Data Engineer"'
+    enabled: true
+
+  # -- ATS boards filtered to India --
+  - name: Greenhouse — India AI/DE
+    query: 'site:job-boards.greenhouse.io OR site:boards.greenhouse.io "India" "AI Engineer" OR "Machine Learning" OR "Data Engineer"'
+    enabled: true
+
+  - name: Lever — India AI/DE
+    query: 'site:jobs.lever.co "India" "Machine Learning" OR "AI" OR "Data Engineer"'
+    enabled: true
+
+  - name: Ashby — India AI/DE
+    query: 'site:jobs.ashbyhq.com "India" "AI" OR "Machine Learning" OR "Data Engineer"'
+    enabled: true
+
+  # -- Startup / YC boards (India) --
+  - name: YC Work at a Startup — India AI
+    query: 'site:workatastartup.com "India" "AI" OR "Machine Learning" OR "LLM" OR "Data Engineer"'
+    enabled: true
+
+  - name: ai-jobs.net — India
+    query: 'site:ai-jobs.net "India" "AI Engineer" OR "Machine Learning" OR "Data Engineer" OR "Generative AI"'
+    enabled: true
+
+# -- Tracked companies --
+# Provider auto-detection (scan.mjs) recognizes careers_url patterns:
+#   greenhouse  job-boards(.eu)?.greenhouse.io/<slug>   (or api: field)
+#   ashby       jobs.ashbyhq.com/<slug>
+#   lever       jobs.lever.co/<slug>
+#   workable    apply.workable.com/<slug>
+#   smartrecruiters (careers|jobs).smartrecruiters.com/<slug>
+#
+# Entries with scan_method: websearch have a corporate careers_url for the
+# AGENT to Playwright (Level 1) + a scan_query fallback (Level 3). scan.mjs
+# (zero-token) skips these — they're agent-scan only.
+
+tracked_companies:
+
+  - name: "Cashify"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "TrueFoundry"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Accuris"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "SymphonyAI"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Esko"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Smarsh"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "R Dash"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Forbes Advisor"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Ainyx Solution"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "KPMG"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Wells Fargo"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "HSBC"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "ICICI lombard"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Akamai Technologies"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "GlobalLogic"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "NVIDIA"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Medpace"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Altera"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Straive"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Automation Anywhere"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "BlackRock"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Synopsys"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Empower"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Adobe"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "GreedyGame"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "TraceLink"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+  - name: "Educase India"
+    scan_method: websearch
+    source: "telegram:TechUprise"
+    added: "2026-06-10"
+    enabled: true
+
+  # ============================================================
+  # VERIFIED ATS BOARDS — India (zero-token scannable via scan.mjs)
+  # Probed & confirmed live on 2026-06-09.
+  # ============================================================
+
+  # -- Fintech (Indian) --
+  - name: Razorpay
+    careers_url: https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited
+    api: https://boards-api.greenhouse.io/v1/boards/razorpaysoftwareprivatelimited/jobs
+    notes: "Bangalore. Payments. Large ML/data org."
+    enabled: true
+
+  - name: PhonePe
+    careers_url: https://job-boards.greenhouse.io/phonepe
+    api: https://boards-api.greenhouse.io/v1/boards/phonepe/jobs
+    notes: "Bangalore. Payments super-app, heavy ML."
+    enabled: true
+
+  - name: Groww
+    careers_url: https://job-boards.greenhouse.io/groww
+    api: https://boards-api.greenhouse.io/v1/boards/groww/jobs
+    notes: "Bangalore. Investing platform."
+    enabled: true
+
+  - name: CRED
+    careers_url: https://jobs.lever.co/cred
+    notes: "Bangalore. Fintech, strong data/ML."
+    enabled: true
+
+  - name: Zeta
+    careers_url: https://jobs.lever.co/zeta
+    notes: "Bangalore. Banking tech (Directi)."
+    enabled: true
+
+  - name: Navi
+    careers_url: https://jobs.ashbyhq.com/navi
+    notes: "Bangalore. Lending/insurance fintech (Sachin Bansal)."
+    enabled: true
+
+  # -- SaaS / product (Indian) --
+  - name: Freshworks
+    careers_url: https://careers.smartrecruiters.com/freshworks
+    notes: "Chennai. CX/CRM SaaS, Freddy AI."
+    enabled: true
+
+  - name: Mindtickle
+    careers_url: https://jobs.lever.co/mindtickle
+    notes: "Pune/SF. AI sales-readiness platform."
+    enabled: true
+
+  - name: Whatfix
+    careers_url: https://careers.smartrecruiters.com/whatfix
+    notes: "Bangalore. Digital adoption platform, GenAI features."
+    enabled: true
+
+  - name: Druva
+    careers_url: https://job-boards.greenhouse.io/druva
+    api: https://boards-api.greenhouse.io/v1/boards/druva/jobs
+    notes: "Pune/US. Cloud data protection, ML for ransomware."
+    enabled: true
+
+  - name: Meesho
+    careers_url: https://jobs.lever.co/meesho
+    notes: "Bangalore. E-commerce, large data/ML org (158+ roles)."
+    enabled: true
+
+  # -- Edtech (Indian) --
+  - name: Scaler
+    careers_url: https://jobs.ashbyhq.com/scaler
+    notes: "Bangalore. Edtech (InterviewBit)."
+    enabled: true
+
+  - name: Unacademy
+    careers_url: https://careers.smartrecruiters.com/unacademy
+    notes: "Bangalore. Edtech."
+    enabled: true
+
+  # -- AI-native (Indian) --
+  - name: Smallest AI
+    careers_url: https://jobs.ashbyhq.com/smallest
+    notes: "India. Real-time voice AI / TTS startup."
+    enabled: true
+
+  - name: Gainsight
+    careers_url: https://jobs.ashbyhq.com/gainsight
+    notes: "Hyderabad/US. Customer success, AI features. Big India office."
+    enabled: true
+
+  - name: Turing
+    careers_url: https://job-boards.greenhouse.io/turing
+    api: https://boards-api.greenhouse.io/v1/boards/turing/jobs
+    notes: "Remote-India friendly. AGI/LLM training + dev talent."
+    enabled: true
+
+  - name: Deepgram
+    careers_url: https://jobs.ashbyhq.com/deepgram
+    notes: "US/Remote. Speech-to-text AI; some India-remote roles."
+    enabled: true
+
+  # ============================================================
+  # INDIAN GenAI / LLM / AGENTIC STARTUPS  (agent scan: websearch)
+  # ============================================================
+
+  - name: Sarvam AI
+    careers_url: https://www.sarvam.ai/careers
+    scan_method: websearch
+    scan_query: '"Sarvam AI" careers "Engineer" OR "Research" OR "ML" OR "Data"'
+    notes: "Bangalore. Indian sovereign LLM (Sarvam-1, OpenHathi)."
+    enabled: true
+
+  - name: Krutrim
+    careers_url: https://www.olakrutrim.com/careers
+    scan_method: websearch
+    scan_query: '"Krutrim" careers "AI" OR "ML" OR "Engineer" OR "Data"'
+    notes: "Bangalore. Ola's AI/LLM + AI cloud unicorn."
+    enabled: true
+
+  - name: Two AI (Sutra)
+    careers_url: https://www.two.ai/careers
+    scan_method: websearch
+    scan_query: '"two.ai" OR "Sutra" careers "AI" OR "ML" OR "Engineer"'
+    notes: "Bangalore/US. SUTRA multilingual LLMs."
+    enabled: true
+
+  - name: Ema
+    careers_url: https://www.ema.co/careers
+    scan_method: websearch
+    scan_query: '"Ema" "ema.co" careers "AI" OR "Engineer" OR "Agent"'
+    notes: "Bangalore/US. Universal AI employee (agentic)."
+    enabled: true
+
+  - name: SuperAGI
+    careers_url: https://superagi.com/careers
+    scan_method: websearch
+    scan_query: '"SuperAGI" careers "AI" OR "Engineer" OR "Agent"'
+    notes: "India. Open-source agentic AI framework + apps."
+    enabled: true
+
+  - name: Composio
+    careers_url: https://composio.dev/careers
+    scan_method: websearch
+    scan_query: '"Composio" careers "AI" OR "Engineer" OR "Agent" OR "tooling"'
+    notes: "SF/India. Tooling/integrations for AI agents."
+    enabled: true
+
+  - name: Portkey
+    careers_url: https://portkey.ai/careers
+    scan_method: websearch
+    scan_query: '"Portkey" careers "AI" OR "Engineer" OR "LLMOps"'
+    notes: "India. LLM gateway / observability (LLMOps)."
+    enabled: true
+
+  - name: Lyzr AI
+    careers_url: https://www.lyzr.ai/careers
+    scan_method: websearch
+    scan_query: '"Lyzr" careers "AI" OR "Engineer" OR "Agent"'
+    notes: "India/US. Agent framework for enterprises."
+    enabled: true
+
+  - name: Fluid AI
+    careers_url: https://www.fluidai.com/careers
+    scan_method: websearch
+    scan_query: '"Fluid AI" careers "AI" OR "Engineer" OR "ML"'
+    notes: "Mumbai. Generative AI for enterprises/banks."
+    enabled: true
+
+  - name: Dashtoon
+    careers_url: https://dashtoon.com/careers
+    scan_method: websearch
+    scan_query: '"Dashtoon" careers "AI" OR "ML" OR "Engineer"'
+    notes: "Bangalore. GenAI comic creation."
+    enabled: true
+
+  - name: Pixis
+    careers_url: https://pixis.ai/careers
+    scan_method: websearch
+    scan_query: '"Pixis" careers "AI" OR "ML" OR "Engineer" OR "Data"'
+    notes: "Bangalore. Codeless AI for marketing."
+    enabled: true
+
+  - name: Jivi AI
+    careers_url: https://jivi.ai/careers
+    scan_method: websearch
+    scan_query: '"Jivi" "jivi.ai" careers "AI" OR "ML" OR "Engineer"'
+    notes: "Gurgaon. Medical AI / healthcare LLM."
+    enabled: true
+
+  # ============================================================
+  # INDIAN CONVERSATIONAL / VOICE AI  (agent scan: websearch)
+  # ============================================================
+
+  - name: Sprinklr
+    careers_url: https://www.sprinklr.com/careers/
+    scan_method: websearch
+    scan_query: '"Sprinklr" careers "AI" OR "Machine Learning" OR "Data" India'
+    notes: "Gurgaon/US. Unified CXM, heavy AI."
+    enabled: true
+
+  - name: Gupshup
+    careers_url: https://www.gupshup.io/company/careers
+    scan_method: websearch
+    scan_query: '"Gupshup" careers "AI" OR "ML" OR "Engineer"'
+    notes: "Bangalore. Conversational messaging + AI."
+    enabled: true
+
+  - name: Yellow.ai
+    careers_url: https://yellow.ai/careers/
+    scan_method: websearch
+    scan_query: '"Yellow.ai" careers "AI" OR "ML" OR "Engineer"'
+    notes: "Bangalore. Conversational AI / voice agents."
+    enabled: true
+
+  - name: Uniphore
+    careers_url: https://www.uniphore.com/careers/
+    scan_method: websearch
+    scan_query: '"Uniphore" careers "AI" OR "ML" OR "Speech" OR "Engineer"'
+    notes: "Chennai/US. Conversational + voice AI."
+    enabled: true
+
+  - name: Observe.AI
+    careers_url: https://www.observe.ai/careers
+    scan_method: websearch
+    scan_query: '"Observe.AI" careers "AI" OR "ML" OR "Engineer"'
+    notes: "Bangalore. Contact-center voice AI."
+    enabled: true
+
+  - name: Skit.ai
+    careers_url: https://skit.ai/careers/
+    scan_method: websearch
+    scan_query: '"Skit.ai" OR "Skit" careers "AI" OR "ML" OR "Speech"'
+    notes: "Bangalore. Voice AI (ex-Vernacular.ai)."
+    enabled: true
+
+  - name: Kore.ai
+    careers_url: https://kore.ai/careers/
+    scan_method: websearch
+    scan_query: '"Kore.ai" careers "AI" OR "ML" OR "Engineer"'
+    notes: "Hyderabad/US. Conversational AI platform."
+    enabled: true
+
+  - name: Gnani.ai
+    careers_url: https://www.gnani.ai/careers/
+    scan_method: websearch
+    scan_query: '"Gnani" careers "AI" OR "ML" OR "Speech"'
+    notes: "Bangalore. Voice-first conversational AI."
+    enabled: true
+
+  - name: CoRover.ai
+    careers_url: https://corover.ai/careers/
+    scan_method: websearch
+    scan_query: '"CoRover" careers "AI" OR "ML" OR "Engineer"'
+    notes: "Bangalore. Conversational AI (BharatGPT)."
+    enabled: true
+
+  - name: Verloop.io
+    careers_url: https://verloop.io/careers/
+    scan_method: websearch
+    scan_query: '"Verloop" careers "AI" OR "ML" OR "Engineer"'
+    notes: "Bangalore. Conversational support automation."
+    enabled: true
+
+  - name: Murf AI
+    careers_url: https://murf.ai/careers
+    scan_method: websearch
+    scan_query: '"Murf AI" careers "AI" OR "ML" OR "Engineer"'
+    notes: "Salt Lake City/India. AI voice generation."
+    enabled: true
+
+  # ============================================================
+  # INDIAN AI / ML & DATA-SCIENCE SERVICES  (agent scan: websearch)
+  # ============================================================
+
+  - name: Fractal Analytics
+    careers_url: https://fractal.ai/careers/
+    scan_method: websearch
+    scan_query: '"Fractal" careers "AI" OR "Machine Learning" OR "Data" Engineer'
+    notes: "Mumbai. AI/analytics unicorn."
+    enabled: true
+
+  - name: Tiger Analytics
+    careers_url: https://www.tigeranalytics.com/careers/
+    scan_method: websearch
+    scan_query: '"Tiger Analytics" careers "AI" OR "ML" OR "Data Engineer"'
+    notes: "Chennai/Remote. Advanced analytics + AI."
+    enabled: true
+
+  - name: Sigmoid
+    careers_url: https://www.sigmoid.com/careers/
+    scan_method: websearch
+    scan_query: '"Sigmoid" careers "Data Engineer" OR "ML" OR "AI" OR "Spark"'
+    notes: "Bangalore. Data engineering + ML (Spark/Databricks)."
+    enabled: true
+
+  - name: Tredence
+    careers_url: https://www.tredence.com/careers
+    scan_method: websearch
+    scan_query: '"Tredence" careers "Data" OR "ML" OR "AI" Engineer'
+    notes: "Bangalore. Data science & engineering."
+    enabled: true
+
+  - name: LatentView Analytics
+    careers_url: https://www.latentview.com/careers/
+    scan_method: websearch
+    scan_query: '"LatentView" careers "Data" OR "ML" OR "AI" Engineer'
+    notes: "Chennai. Analytics & data engineering."
+    enabled: true
+
+  - name: Quantiphi
+    careers_url: https://quantiphi.com/careers/
+    scan_method: websearch
+    scan_query: '"Quantiphi" careers "Machine Learning" OR "AI" OR "Data Engineer"'
+    notes: "Mumbai/US. Applied AI & data engineering."
+    enabled: true
+
+  - name: TheMathCompany
+    careers_url: https://themathcompany.com/careers
+    scan_method: websearch
+    scan_query: '"TheMathCompany" OR "MathCo" careers "Data" OR "ML" OR "AI"'
+    notes: "Bangalore. Analytics & data science."
+    enabled: true
+
+  - name: Gramener
+    careers_url: https://gramener.com/careers/
+    scan_method: websearch
+    scan_query: '"Gramener" careers "Data" OR "ML" OR "AI" OR "GenAI"'
+    notes: "Hyderabad. Data science & GenAI consulting."
+    enabled: true
+
+  # ============================================================
+  # INDIAN HEALTHCARE / VERTICAL AI  (agent scan: websearch)
+  # ============================================================
+
+  - name: Qure.ai
+    careers_url: https://www.qure.ai/careers
+    scan_method: websearch
+    scan_query: '"Qure.ai" careers "AI" OR "ML" OR "Deep Learning" OR "Computer Vision"'
+    notes: "Mumbai. Medical imaging AI."
+    enabled: true
+
+  - name: Eka.care
+    careers_url: https://www.eka.care/careers
+    scan_method: websearch
+    scan_query: '"Eka.care" careers "AI" OR "ML" OR "Engineer" OR "Data"'
+    notes: "Bangalore. Health records + AI."
+    enabled: true
+
+  - name: SigTuple
+    careers_url: https://sigtuple.com/careers
+    scan_method: websearch
+    scan_query: '"SigTuple" careers "AI" OR "ML" OR "Computer Vision"'
+    notes: "Bangalore. AI for medical diagnostics."
+    enabled: true
+
+  - name: Wysa
+    careers_url: https://www.wysa.com/careers
+    scan_method: websearch
+    scan_query: '"Wysa" careers "AI" OR "ML" OR "NLP" OR "Engineer"'
+    notes: "Bangalore. AI mental-health chatbot."
+    enabled: true
+
+  # ============================================================
+  # INDIAN DATA INFRA / SaaS / DEV TOOLS  (agent scan: websearch)
+  # ============================================================
+
+  - name: Postman
+    careers_url: https://www.postman.com/company/careers/
+    scan_method: websearch
+    scan_query: '"Postman" careers "AI" OR "Machine Learning" OR "Data" India'
+    notes: "Bangalore/SF. API platform, AI features."
+    enabled: true
+
+  - name: Hasura
+    careers_url: https://hasura.io/careers/
+    scan_method: websearch
+    scan_query: '"Hasura" careers "AI" OR "ML" OR "Data" OR "Engineer"'
+    notes: "Bangalore/SF. Data access / GraphQL + PromptQL AI."
+    enabled: true
+
+  - name: Atlan
+    careers_url: https://atlan.com/careers/
+    scan_method: websearch
+    scan_query: '"Atlan" careers "Data" OR "AI" OR "ML" OR "Engineer"'
+    notes: "Remote-India. Active metadata / data catalog."
+    enabled: true
+
+  - name: BrowserStack
+    careers_url: https://www.browserstack.com/careers
+    scan_method: websearch
+    scan_query: '"BrowserStack" careers "AI" OR "ML" OR "Data Engineer"'
+    notes: "Mumbai. Dev testing platform, AI features."
+    enabled: true
+
+  - name: CleverTap
+    careers_url: https://clevertap.com/careers/
+    scan_method: websearch
+    scan_query: '"CleverTap" careers "AI" OR "ML" OR "Data Engineer"'
+    notes: "Mumbai. Engagement + retention AI (TesseractDB)."
+    enabled: true
+
+  - name: MoEngage
+    careers_url: https://www.moengage.com/careers/
+    scan_method: websearch
+    scan_query: '"MoEngage" careers "AI" OR "ML" OR "Data Engineer"'
+    notes: "Bangalore. Customer engagement + AI."
+    enabled: true
+
+  - name: Innovaccer
+    careers_url: https://innovaccer.com/careers
+    scan_method: websearch
+    scan_query: '"Innovaccer" careers "AI" OR "ML" OR "Data Engineer"'
+    notes: "Noida/US. Healthcare data platform + AI."
+    enabled: true
+
+  - name: SirionLabs
+    careers_url: https://www.sirion.ai/company/careers/
+    scan_method: websearch
+    scan_query: '"Sirion" careers "AI" OR "ML" OR "NLP" OR "Engineer"'
+    notes: "Gurgaon. AI contract lifecycle management."
+    enabled: true
+
+  - name: Juspay
+    careers_url: https://juspay.in/careers
+    scan_method: websearch
+    scan_query: '"Juspay" careers "AI" OR "ML" OR "Data" OR "Engineer"'
+    notes: "Bangalore. Payments infra, ML for fraud/routing."
+    enabled: true
+
+  # ============================================================
+  # INDIAN CONSUMER TECH — large ML/data orgs (agent scan: websearch)
+  # ============================================================
+
+  - name: Swiggy
+    careers_url: https://careers.swiggy.com/
+    scan_method: websearch
+    scan_query: '"Swiggy" careers "Machine Learning" OR "AI" OR "Data Engineer"'
+    notes: "Bangalore. Food/quick-commerce, large ML org."
+    enabled: true
+
+  - name: Zomato
+    careers_url: https://www.zomato.com/careers
+    scan_method: websearch
+    scan_query: '"Zomato" OR "Eternal" careers "Machine Learning" OR "AI" OR "Data Engineer"'
+    notes: "Gurgaon. Food delivery, ML/data."
+    enabled: true
+
+  - name: Flipkart
+    careers_url: https://www.flipkartcareers.com/
+    scan_method: websearch
+    scan_query: '"Flipkart" careers "Machine Learning" OR "AI" OR "Data Engineer"'
+    notes: "Bangalore. E-commerce, large ML/data org."
+    enabled: true
+
+  - name: Dream11
+    careers_url: https://www.dream11.com/careers
+    scan_method: websearch
+    scan_query: '"Dream11" OR "Dream Sports" careers "Machine Learning" OR "AI" OR "Data Engineer"'
+    notes: "Mumbai. Fantasy sports, heavy data/ML."
+    enabled: true
+
+  - name: ShareChat
+    careers_url: https://sharechat.com/careers
+    scan_method: websearch
+    scan_query: '"ShareChat" OR "Mohalla Tech" careers "Machine Learning" OR "AI" OR "Data"'
+    notes: "Bangalore. Vernacular social, recommendation ML."
+    enabled: true
+
+  - name: Cars24
+    careers_url: https://www.cars24.com/careers/
+    scan_method: websearch
+    scan_query: '"Cars24" careers "Machine Learning" OR "AI" OR "Data Engineer"'
+    notes: "Gurgaon. Used-car marketplace, ML pricing."
+    enabled: true
+
+  - name: PhysicsWallah
+    careers_url: https://www.physicswallah.com/careers
+    scan_method: websearch
+    scan_query: '"PhysicsWallah" OR "PW" careers "AI" OR "Machine Learning" OR "Data Engineer"'
+    notes: "Noida. Edtech, GenAI tutoring."
+    enabled: true
+
+  # ============================================================
+  # INDIAN GPU / AI CLOUD  (agent scan: websearch)
+  # ============================================================
+
+  - name: E2E Networks
+    careers_url: https://www.e2enetworks.com/careers
+    scan_method: websearch
+    scan_query: '"E2E Networks" careers "AI" OR "ML" OR "GPU" OR "Engineer"'
+    notes: "Delhi. India GPU cloud for AI."
+    enabled: true
+
+  - name: Neysa
+    careers_url: https://www.neysa.ai/careers
+    scan_method: websearch
+    scan_query: '"Neysa" careers "AI" OR "ML" OR "GPU" OR "Engineer"'
+    notes: "Mumbai. AI cloud / GPU infrastructure."
+    enabled: true
+
+  # ============================================================
+  # GLOBAL AI w/ MAJOR INDIA HIRING (agent scan: websearch)
+  # ============================================================
+
+  - name: Microsoft (India)
+    careers_url: https://careers.microsoft.com/
+    scan_method: websearch
+    scan_query: 'site:careers.microsoft.com "AI" OR "Machine Learning" OR "Data Engineer" India'
+    notes: "Hyderabad/Bangalore/Noida IDC. Huge AI org."
+    enabled: true
+
+  - name: Google (India)
+    careers_url: https://www.google.com/about/careers/applications/
+    scan_method: websearch
+    scan_query: 'site:google.com/about/careers "Machine Learning" OR "AI" OR "Data" India'
+    notes: "Bangalore/Hyderabad. ML/AI roles."
+    enabled: true
+
+  - name: Databricks (India)
+    careers_url: https://www.databricks.com/company/careers
+    scan_method: websearch
+    scan_query: '"Databricks" careers "Engineer" OR "AI" OR "ML" India OR Bengaluru'
+    notes: "Bengaluru. Lakehouse + GenAI; directly relevant to your stack."
+    enabled: true
+
+  - name: Adobe (India)
+    careers_url: https://careers.adobe.com/
+    scan_method: websearch
+    scan_query: 'site:adobe.com/careers OR "Adobe" careers "Machine Learning" OR "AI" India'
+    notes: "Bangalore/Noida. Firefly + ML."
+    enabled: true
+
+  - name: NVIDIA (India)
+    careers_url: https://www.nvidia.com/en-us/about-nvidia/careers/
+    scan_method: websearch
+    scan_query: '"NVIDIA" careers "Deep Learning" OR "AI" OR "ML" India OR Bengaluru OR Pune'
+    notes: "Bangalore/Pune/Hyderabad. Deep learning."
+    enabled: true
+
+  - name: Walmart Global Tech (India)
+    careers_url: https://careers.walmart.com/technology
+    scan_method: websearch
+    scan_query: '"Walmart Global Tech" careers "Machine Learning" OR "AI" OR "Data Engineer" India'
+    notes: "Bangalore/Chennai. Large data/ML org."
+    enabled: true
+
+  - name: Atlassian (India)
+    careers_url: https://www.atlassian.com/company/careers/all-jobs
+    scan_method: websearch
+    scan_query: '"Atlassian" careers "Machine Learning" OR "AI" OR "Data Engineer" India OR Bengaluru'
+    notes: "Bengaluru. Rovo AI, data platform."
+    enabled: true
+
+  - name: ZS Associates (India)
+    careers_url: https://www.zs.com/careers
+    scan_method: websearch
+    scan_query: '"ZS Associates" careers "Data Science" OR "Machine Learning" OR "AI" OR "Data Engineer" India'
+    notes: "Pune/Gurgaon/Bangalore. Analytics & AI consulting."
+    enabled: true
+
+# ============================================================
+# APIFY JOB SCRAPERS  (added 2026-06-16)
+# Third discovery source, alongside Telegram (TechUprise) + company sites.
+# Driven by `node apify-scan.mjs` (run with NODE_OPTIONS=--use-system-ca for the
+# corporate proxy). Token lives in .env (APIFY_TOKEN) — never committed.
+#
+# PRICING (you're on the Apify FREE tier, ~$5/month credit). Pay-per-result:
+#   LinkedIn  $0.001/job          (cheapest)
+#   Naukri    $0.01 start + $0.005/job
+#   All-Jobs  $0.01 start + $0.0035/result (scrapes several boards per keyword)
+#   Wellfound $0.20/job  ← EXCLUDED on purpose: one run blows the free budget.
+# Keep the limits below modest; raise once you're comfortable with the spend.
+# ============================================================
+apify:
+  enabled: true
+  location: "India"
+  geo_id: "102713980"            # LinkedIn India geoId
+  date_posted_days: 7            # only jobs posted in the last N days
+  experience_levels: ["2", "3"]  # LinkedIn f_E: 1=Intern 2=Entry 3=Associate 4=Mid-Senior
+  naukri_experience: "1"         # Naukri: candidate years of experience (enum 0..30 | "all")
+  # Keyword set covering your target archetypes. LinkedIn runs ONE combined
+  # "OR" search; Naukri + All-Jobs take a single phrase, so they run once PER
+  # keyword. Keep this list focused — each extra keyword adds runs (and cost).
+  keywords:
+    - "Generative AI"
+    - "AI Engineer"
+    - "Machine Learning Engineer"
+    - "Data Engineer"
+    - "Computer Vision"
+  max_results_linkedin: 40       # total for the single LinkedIn OR search
+  max_results_per_keyword: 12    # per keyword for Naukri / All-Jobs (cost control)
+  actors:
+    - id: "curious_coder~linkedin-jobs-scraper"
+      platform: linkedin
+      enabled: true
+    # Naukri + All-Jobs disabled 2026-06-16 — running LinkedIn only for now.
+    # Flip enabled: true to bring them back (cost goes up; see pricing note above).
+    - id: "muhammetakkurtt~naukri-job-scraper"
+      platform: naukri
+      enabled: false
+    - id: "agentx~all-jobs-scraper"
+      platform: alljobs
+      enabled: false
+    # Wellfound intentionally disabled — $0.20/job is ~200x LinkedIn and alone
+    # exceeds the free monthly credit. Re-enable only with a very low cap.
+    # - id: "orgupdate~wellfound-jobs-scraper"
+    #   platform: wellfound
+    #   enabled: false

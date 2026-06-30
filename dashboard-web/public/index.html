@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>career-ops · job tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>📊</text></svg>" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">▰</span>
+      <div>
+        <h1 id="name">career-ops</h1>
+        <p id="headline" class="muted"></p>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <span id="updated" class="muted small"></span>
+      <label class="toggle"><input type="checkbox" id="autorefresh" checked /> auto-refresh</label>
+      <button id="refresh" class="btn">↻ Refresh</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="kpis" class="kpi-grid"></section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Daily jobs <span id="dailyCount" class="pill"></span></h2>
+        <div class="filters">
+          <select id="dailyDate" class="search" title="pick a day"></select>
+          <input id="dailySearch" class="search" placeholder="filter title / company / location…" />
+          <select id="dailySource" class="search"><option value="">all sources</option></select>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table id="dailyTable">
+          <thead>
+            <tr><th>Source</th><th>Title</th><th>Company</th><th>Location</th><th>Seniority</th><th>Type</th><th>Salary</th><th>Posted</th><th>Applicants</th><th>Apply</th><th>Status</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <p id="dailyEmpty" class="empty"></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Application funnel</h2>
+      <div id="funnel" class="funnel"></div>
+    </section>
+
+    <section class="grid-2">
+      <div class="card">
+        <h2>Status distribution</h2>
+        <div class="chart-box"><canvas id="statusChart"></canvas></div>
+        <div id="statusFallback" class="fallback"></div>
+      </div>
+      <div class="card">
+        <h2>Score distribution</h2>
+        <div class="chart-box"><canvas id="scoreChart"></canvas></div>
+        <div id="scoreFallback" class="fallback"></div>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div class="card">
+        <h2>Scan activity over time</h2>
+        <div class="chart-box"><canvas id="scanChart"></canvas></div>
+        <div id="scanFallback" class="fallback"></div>
+      </div>
+      <div class="card">
+        <h2>Top companies (pipeline + applied)</h2>
+        <div class="chart-box"><canvas id="companyChart"></canvas></div>
+        <div id="companyFallback" class="fallback"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Job postings <span id="appCount" class="pill"></span></h2>
+        <div class="filters">
+          <input id="appSearch" class="search" placeholder="filter company / role…" />
+          <select id="statusFilter" class="search"><option value="">all statuses</option></select>
+          <select id="scoreFilter" class="search">
+            <option value="">any score</option>
+            <option value="4">≥ 4.0</option>
+            <option value="3.5">≥ 3.5</option>
+            <option value="3">≥ 3.0</option>
+          </select>
+          <label class="toggle"><input type="checkbox" id="resumeFilter" /> has resume</label>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table id="appTable">
+          <thead>
+            <tr><th>#</th><th>Date</th><th>Company</th><th>Role</th><th>Score</th><th>Status</th><th>Apply</th><th>Resume</th><th>Report</th><th>Notes</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <p id="appEmpty" class="empty"></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Pipeline — pending evaluation</h2>
+        <span id="pipeCount" class="pill"></span>
+      </div>
+      <div class="table-wrap">
+        <table id="pipeTable">
+          <thead><tr><th>Company</th><th>Role</th><th>Link</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p id="pipeEmpty" class="empty"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="muted small">
+    Data source: <code>data/applications.md</code> · <code>data/pipeline.md</code> · <code>data/scan-history.tsv</code> · <code>reports/</code> — the agent updates these; this view reads them live.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

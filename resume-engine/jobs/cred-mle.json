@@ -1,0 +1,10 @@
+{
+  "_job": "CRED — Machine Learning Engineer (production ML + agentic systems / AI copilots)",
+  "summary": "Machine learning / AI engineer building production ML and agentic systems: multi-agent LangGraph workflows (CareerOS), MCP-based tools (Tinder AI Coach), and a RAG framework scaling Databricks Genie to 120+ tables across 9 spaces. Python; full ML lifecycle from ingestion to deployment. IIT (ISM) Dhanbad CSE.",
+  "skills": [
+    { "category": "Gen AI", "items": "LangChain, LangGraph, Agentic AI, MCP, RAG, Fine-tuning, FAISS, ChromaDB, Hugging Face, Ollama, FastAPI" },
+    { "category": "ML and DL", "items": "Machine Learning, Deep Learning, NLP, Computer Vision, CNN, LSTMs, BERT, Transformers, Transfer Learning, GANs, XAI, OCR, TensorFlow, PyTorch, Keras, MLOps" },
+    { "category": "Programming Languages / Databases", "items": "Python, SQL, PostgreSQL, C++, C" },
+    { "category": "Data Engineering", "items": "Databricks, PySpark, ADF, ADLS Gen2, Apache Spark, ETL, Data Warehousing, AWS" }
+  ]
+}

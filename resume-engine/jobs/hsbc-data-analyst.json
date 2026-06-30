@@ -1,0 +1,9 @@
+{
+  "_job": "HSBC — Data Analyst (Mumbai, Hybrid; freshers; data analysis / SQL / Python / BI)",
+  "skills": [
+    { "category": "Programming Languages / Databases", "items": "Python, SQL, PostgreSQL, C++, C" },
+    { "category": "Data Engineering", "items": "SQL, Python, PySpark, Apache Spark, Databricks, ETL, Data Warehousing, Business Intelligence, Data Visualization, AWS" },
+    { "category": "ML and DL", "items": "Machine Learning, Deep Learning, Statistics, NLP, Computer Vision, GANs, TensorFlow, PyTorch, MLOps" },
+    { "category": "Gen AI", "items": "LangChain, LangGraph, Agentic AI, MCP, RAG, FAISS, ChromaDB, Hugging Face, Ollama, FastAPI" }
+  ]
+}

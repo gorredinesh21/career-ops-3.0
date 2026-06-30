@@ -1,0 +1,31 @@
+I've spent a lot of time learning GenAI — prompts, LangChain, RAG, agents. I thought I understood the field.
+
+Then I asked a simple question: "How do you actually host an LLM?"
+
+And I realized I'd been ignoring half the picture.
+
+Most of us who learn GenAI learn the brain — the prompts, the chains, the clever agent logic. We call an API, get a response, and feel like we've built something.
+
+But calling an API hides an entire world:
+
+→ The model is loaded into GPU memory (a 70B model needs ~140GB)
+→ Quantization shrinks it to run on real hardware (4-bit, GGUF, AWQ…)
+→ A serving layer batches thousands of requests (vLLM, KV-cache, PagedAttention)
+→ Docker + Kubernetes keep it alive at scale
+→ Monitoring catches it when it breaks at 2am
+
+This is LLMOps — and it's the difference between a cool demo and a system that actually serves your company.
+
+Why does almost everyone skip it?
+
+Because building a chatbot in a notebook feels like success. But "it works on my machine" is not the same as "it serves 10,000 users reliably, privately, and cheaply."
+
+Especially in enterprises — where data cannot leave the building — self-hosted, quantized models behind real infra aren't a nice-to-have. They're the whole point.
+
+So I'm shifting how I learn. The prompt is only the recipe. LLMOps is how you open the restaurant.
+
+If you're learning GenAI and you've never run a model locally, set up Ollama, or wondered what "4-bit quantization" means — that's the gap worth closing.
+
+The brain is impressive. But the body and the plumbing are what ship.
+
+#LLMOps #GenAI #MLOps #AIEngineering #MachineLearning

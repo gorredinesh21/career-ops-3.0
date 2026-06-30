@@ -1,0 +1,27 @@
+Two summits. One message: "you won't need data engineers soon."
+
+I spent some time this week going through what Snowflake and Google announced at their summits, and the direction is hard to miss.
+
+Snowflake is pushing an "Agentic Enterprise" — Cortex Code writing pipelines on its own, agents that migrate legacy systems, AI that runs feature engineering and training from a plain English prompt.
+
+Google went even further. Their BigQuery Data Engineering Agent is now GA. You type "load this bucket, standardize the dates, dedupe on order ID, write to clean_orders" — and it generates the SQL, the tests, and the docs. At scale. Across hundreds of pipelines.
+
+As someone who builds these pipelines for a living, my honest first reaction was: this is genuinely impressive. My second reaction was: I don't think it eliminates the data engineer. At least not yet. Here's why I think that 👇
+
+1. The hard part of data engineering was never the code. It's knowing what "clean" even means for your business. Which duplicate is the real one. Why a number is "wrong" when it's technically valid. An agent can write the join. It can't tell you that finance defines revenue differently from sales.
+
+2. Context lives in people's heads, not in the schema. Half my job is figuring out why a source system behaves the way it does, who owns it, and what breaks downstream if I touch it. That tribal knowledge isn't in any prompt.
+
+3. Accountability doesn't automate. When a pipeline silently corrupts a dashboard the CEO sees, someone has to own it, debug it, and explain it. "The agent generated it" is not an answer anyone accepts.
+
+4. Garbage prompt → confident garbage. These tools are only as good as the person specifying the requirement. Which… still sounds a lot like needing a data engineer, just one who now writes intent instead of boilerplate.
+
+So my honest take: the boring parts of our job are getting automated, and that's a good thing. The role shifts from "writing pipelines" to "deciding what's correct, governing it, and owning the outcome."
+
+But here's the part I won't pretend about — when both Snowflake and Google are betting their roadmaps on this, I've learned not to say "impossible." These are companies that turn multi-year bets into reality. The line keeps moving. What needs a human today might not in a few years.
+
+So I'm not threatened by it. I'm learning it. Because the engineer who knows how to direct these agents will be far more valuable than the one who refused to look.
+
+What's your take — augmentation or replacement? 👇
+
+#DataEngineering #AI #Snowflake #GoogleCloud #BigQuery #FutureOfWork
